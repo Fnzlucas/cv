@@ -128,8 +128,8 @@ a{text-decoration:none;color:inherit}
 .cat-lbl{font-size:13px;font-weight:600;color:var(--ink-2);white-space:nowrap}
 
 /* ===== SECTION ===== */
-.section{padding:40px 0}
-.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:24px}
+.section{padding:100px 0}
+.section-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:48px}
 .section-title{font-size:26px;font-weight:800;letter-spacing:-0.025em}
 .section-link{font-size:15px;font-weight:700;color:var(--ink);cursor:pointer;display:flex;align-items:center;gap:4px}
 
@@ -179,6 +179,15 @@ a{text-decoration:none;color:inherit}
 .detail-feat-t{font-size:16px;font-weight:700;margin-bottom:3px}
 .detail-feat-d{font-size:14px;color:var(--muted);line-height:1.5}
 
+
+/* ===== PHONE MOCKUP ===== */
+.detail-layout{display:grid;grid-template-columns:1fr 280px;gap:40px;align-items:start}
+.phone-mockup{position:sticky;top:96px;display:flex;flex-direction:column;align-items:center;gap:16px;width:100%;overflow:hidden}
+.phone-frame{width:230px;height:498px;border-radius:40px;background:#111;border:7px solid #222;box-shadow:0 0 0 1px #333,0 24px 48px rgba(0,0,0,0.2);overflow:hidden;position:relative;flex-shrink:0;margin:0 auto}
+.phone-frame iframe{width:375px;height:812px;border:none;transform:scale(0.608);transform-origin:top left;pointer-events:all}
+.phone-open-btn{display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:99px;background:var(--surface);border:1px solid var(--line);font-size:13px;font-weight:700;color:var(--ink);cursor:pointer;font-family:inherit;text-decoration:none;transition:all 0.18s}
+.phone-open-btn:hover{background:var(--ink);color:#fff}
+@media(max-width:900px){.detail-layout{grid-template-columns:1fr}.phone-mockup{position:static;order:-1}}
 
 /* ===== PHONE MOCKUP ===== */
 .detail-layout{display:grid;grid-template-columns:1fr 280px;gap:40px;align-items:start}
@@ -297,12 +306,12 @@ a{text-decoration:none;color:inherit}
 .cv-pill{display:flex;align-items:center;gap:5px;padding:5px 12px;border-radius:99px;background:var(--surface);border:1px solid var(--line);font-size:12px;font-weight:600;color:var(--ink-2)}
 .cv-pill .lvl{font-size:11px;font-weight:400;color:var(--muted)}
 @media(max-width:700px){.cv-strip-item{min-width:calc(50% - 1px);border-bottom:1px solid var(--line)}.cv-strip-item:nth-child(2){border-right:none}.cv-strip-item:nth-child(3){border-bottom:none}.cv-strip-item:last-child{border-bottom:none}}
-.cv-hero{padding:40px 0 32px}
+.cv-hero{padding:72px 0 48px}
 .cv-hero-t{font-size:clamp(28px,5vw,42px);font-weight:800;letter-spacing:-0.03em;margin-bottom:8px}
 .cv-hero-s{font-size:16px;color:var(--muted);line-height:1.5}
 .cv-timeline{position:relative;padding:8px 0 40px;max-width:860px;margin:0 auto}
 .cv-timeline::before{content:'';position:absolute;left:50%;top:0;bottom:0;width:2px;background:var(--line);transform:translateX(-50%);z-index:0}
-.cv-entry{position:relative;margin-bottom:48px;display:flex;align-items:flex-start}
+.cv-entry{position:relative;margin-bottom:72px;display:flex;align-items:flex-start}
 .cv-entry.l{padding-right:calc(50% + 28px);flex-direction:row}
 .cv-entry.r{padding-left:calc(50% + 28px);flex-direction:row}
 .cv-dot{position:absolute;left:50%;transform:translateX(-50%);top:18px;background:var(--green);color:#fff;font-size:10px;font-weight:800;padding:5px 10px;border-radius:99px;white-space:nowrap;z-index:2;letter-spacing:0.03em;border:2px solid var(--bg)}
@@ -358,7 +367,7 @@ a{text-decoration:none;color:inherit}
 .contact-card-v{font-size:17px;font-weight:700;letter-spacing:-0.01em}
 
 /* ===== FOOTER ===== */
-.footer{border-top:1px solid var(--line);padding:40px 0 120px;margin-top:40px}
+.footer{border-top:1px solid var(--line);padding:40px 0 60px;margin-top:20px}
 .footer-grid{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px}
 .footer-brand{font-size:22px;font-weight:800;letter-spacing:-0.03em}
 .footer-brand .dot{color:var(--green)}
@@ -477,8 +486,8 @@ a{text-decoration:none;color:inherit}
     <div class="hero-banner reveal">
       <div class="hero-banner-bg"></div>
       <div class="hero-banner-content">
-        <div class="hero-tag"><span class="pulse"></span>Candidat · Growth Hacker / AI Builder</div>
-        <h1 class="hero-banner-title">Growth Hacker<br>& <span class="g">AI Builder</span>.</h1>
+        <div class="hero-tag"><span class="pulse"></span>Candidat · Dev Full Stack · Growth Hacker / AI Builder</div>
+        <h1 class="hero-banner-title">Full Stack<br><span class="g">Growth & IA.</span></h1>
         <p class="hero-banner-sub">Growth, IA et automatisation. Basé à Villeneuve-lès-Avignon, disponible rapidement.</p>
         <div class="hero-banner-actions">
           <button class="btn-green" onclick="go('work')"><span class="ms">restaurant_menu</span>Voir le menu</button>
@@ -524,7 +533,7 @@ a{text-decoration:none;color:inherit}
       <div class="statcard reveal"><div class="statcard-v" data-count="5">0</div><div class="statcard-l">Sites e-com en full SEO</div></div>
       <div class="statcard reveal"><div class="statcard-v" data-count="6">0</div><div class="statcard-l">Plats au catalogue</div></div>
       <div class="statcard reveal"><div class="statcard-v" data-count="100" data-suffix="%">0</div><div class="statcard-l">Cuisinés en solo</div></div>
-      <div class="statcard reveal"><div class="statcard-v" data-count="3">0</div><div class="statcard-l">Sociétés lancées</div></div>
+      <div class="statcard reveal"><div class="statcard-v" data-count="5" data-suffix="+">0</div><div class="statcard-l">Ans d'expérience</div></div>
     </div>
 
     <!-- 03 · PROJETS -->
@@ -538,7 +547,7 @@ a{text-decoration:none;color:inherit}
   </div>
   <div class="wrap"><div class="footer"><div class="footer-grid">
     <div><div class="footer-brand" style="flex-direction:column;gap:0;align-items:flex-start"><span style="font-size:22px;font-weight:800;color:var(--green);letter-spacing:-0.04em;line-height:1;display:block">Uber</span><span style="font-size:22px;font-weight:800;color:var(--ink);letter-spacing:-0.04em;line-height:1;display:block">Dev</span></div><div class="footer-tag">Des produits livrés chauds, prêts à scaler.</div></div>
-    <div class="footer-meta">© 2026 · VILLENEUVE-LÈS-AVIGNON · FR</div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px"><div style="font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--green)">Page éphémère · Créée pour Unipros</div><div class="footer-meta">© 2026 · VILLENEUVE-LÈS-AVIGNON · FR</div></div>
   </div></div></div>
 </section>
 
@@ -636,7 +645,7 @@ a{text-decoration:none;color:inherit}
         <h1 class="cv-hero-t" style="margin:0">Fernandez <span style="color:var(--green)">Lucas.</span></h1>
         <button onclick="openLdm()" style="display:inline-flex;align-items:center;gap:7px;padding:9px 18px;border-radius:99px;background:var(--surface);border:1.5px solid var(--line);font-size:13px;font-weight:700;color:var(--ink);cursor:pointer;font-family:inherit;transition:all 0.18s" onmouseover="this.style.background='var(--ink)';this.style.color='#fff'" onmouseout="this.style.background='var(--surface)';this.style.color='var(--ink)'"><span class="ms" style="font-size:16px">description</span>Lettre de motivation</button>
       </div>
-      <p class="cv-hero-s reveal">Growth Hacker · AI Builder · Fondateur · 29 ans · Villeneuve-lès-Avignon</p>
+      <p class="cv-hero-s reveal">Dev Full Stack · Growth Hacker · AI Builder · 29 ans · Villeneuve-lès-Avignon</p>
     </div>
     <div class="cv-strip reveal">
       <div class="cv-strip-item"><div class="cv-strip-ic"><span class="ms ms-fill">cake</span></div><div><div class="cv-info-l">Âge</div><div class="cv-info-v">29 ans</div></div></div>
@@ -649,6 +658,7 @@ a{text-decoration:none;color:inherit}
       <div class="cv-bottom-card"><div class="cv-info-l">Centres d'intérêt</div><div class="cv-pill-row"><span class="cv-pill"><span class="ms" style="font-size:13px">sports_soccer</span> Sport</span><span class="cv-pill"><span class="ms" style="font-size:13px">terrain</span> Randonnée</span><span class="cv-pill"><span class="ms" style="font-size:13px">flight</span> Voyage</span><span class="cv-pill"><span class="ms" style="font-size:13px">restaurant</span> Cuisine</span><span class="cv-pill"><span class="ms" style="font-size:13px">rocket_launch</span> Entrepreneuriat</span></div></div>
     </div>
     <div class="reveal" style="margin-bottom:36px"><div style="background:var(--ink);border-radius:var(--radius-xl);padding:28px 32px"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--green);margin-bottom:12px">Mon positionnement · Unipros</div><p style="font-size:16px;color:rgba(255,255,255,0.88);line-height:1.7;margin:0;font-style:italic">"Mes projets tournent ou ont été cédés. Ce que je cherche maintenant c'est simple : une boîte dans laquelle m'investir vraiment, apprendre, et rester. Unipros coche tout — le secteur, l'ambition, le profil recherché."</p></div></div>
+    <div class="reveal" style="margin-bottom:36px"><div style="background:var(--ink);border-radius:var(--radius-xl);padding:28px 32px"><div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--green);margin-bottom:12px">Mon positionnement · Unipros</div><p style="font-size:16px;color:rgba(255,255,255,0.88);line-height:1.7;margin:0;font-style:italic">"Mes projets tournent ou ont été cédés. J'ai fait le tour de l'entrepreneuriat — c'est une belle école, mais après plusieurs années en solo je cherche autre chose : la dynamique d'une équipe, des challenges plus grands, et la stabilité d'un vrai poste. Unipros coche tout."</p></div></div>
     <div class="cv-timeline">
 
       <div class="cv-entry l">
@@ -787,6 +797,28 @@ a{text-decoration:none;color:inherit}
       </div>
     </div>
   </div>
+  <div class="wrap">
+    <div class="reveal" style="border-top:1px solid var(--line);padding:48px 0 40px">
+      <div style="background:var(--surface);border-radius:var(--radius-xl);padding:28px 32px">
+        <div style="display:flex;align-items:center;gap:20px;margin-bottom:20px">
+          <div style="width:64px;height:64px;border-radius:16px;background:var(--ink);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+            <span style="font-size:22px;font-weight:800;color:#fff;letter-spacing:-0.02em">LF</span>
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Full Stack · Growth · IA</div>
+            <div style="font-size:22px;font-weight:800;letter-spacing:-0.025em">Lucas Fernandez</div>
+            <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);font-weight:500;margin-top:4px"><span class="ms" style="font-size:15px;color:var(--muted)">location_on</span>Villeneuve-lès-Avignon · Gard (30)</div>
+          </div>
+        </div>
+        <p style="font-size:15px;color:var(--ink-2);line-height:1.7;margin-bottom:20px">Entrepreneur reconverti, je cherche à mettre mes compétences en développement et en IA au service d'une équipe ambitieuse. Aujourd'hui je veux construire avec des gens, pas seul.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="mailto:fernandezlucas.pro@outlook.fr" style="display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:99px;background:var(--bg);border:1px solid var(--line);font-size:13px;font-weight:700;color:var(--ink);text-decoration:none"><span class="ms" style="font-size:16px;color:var(--muted)">mail</span>fernandezlucas.pro@outlook.fr</a>
+          <a href="tel:0750983367" style="display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:99px;background:var(--bg);border:1px solid var(--line);font-size:13px;font-weight:700;color:var(--ink);text-decoration:none"><span class="ms" style="font-size:16px;color:var(--muted)">phone</span>07 50 98 33 67</a>
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:99px;background:var(--bg);border:1px solid var(--line);font-size:13px;font-weight:700;color:var(--ink)"><span class="ms" style="font-size:16px;color:var(--muted)">location_on</span>4 impasse Jean Roussière</div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="wrap"><div class="footer"><div class="footer-grid">
     <div><div class="footer-brand" style="flex-direction:column;gap:0;align-items:flex-start"><span style="font-size:22px;font-weight:800;color:var(--green);letter-spacing:-0.04em;line-height:1;display:block">Uber</span><span style="font-size:22px;font-weight:800;color:var(--ink);letter-spacing:-0.04em;line-height:1;display:block">Dev</span></div><div class="footer-tag">Un parcours, un écosystème.</div></div>
     <div class="footer-meta">© 2026 · SINCE THE START</div>
@@ -824,9 +856,31 @@ a{text-decoration:none;color:inherit}
       </div>
     </div>
   </div>
+  <div class="wrap">
+    <div class="reveal" style="border-top:1px solid var(--line);padding:48px 0 40px">
+      <div style="background:var(--surface);border-radius:var(--radius-xl);padding:28px 32px">
+        <div style="display:flex;align-items:center;gap:20px;margin-bottom:20px">
+          <div style="width:64px;height:64px;border-radius:16px;background:var(--ink);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+            <span style="font-size:22px;font-weight:800;color:#fff;letter-spacing:-0.02em">LF</span>
+          </div>
+          <div>
+            <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--muted);margin-bottom:4px">Full Stack · Growth · IA</div>
+            <div style="font-size:22px;font-weight:800;letter-spacing:-0.025em">Lucas Fernandez</div>
+            <div style="display:flex;align-items:center;gap:6px;font-size:13px;color:var(--muted);font-weight:500;margin-top:4px"><span class="ms" style="font-size:15px;color:var(--muted)">location_on</span>Villeneuve-lès-Avignon · Gard (30)</div>
+          </div>
+        </div>
+        <p style="font-size:15px;color:var(--ink-2);line-height:1.7;margin-bottom:20px">Entrepreneur reconverti, je cherche à mettre mes compétences en développement et en IA au service d'une équipe ambitieuse. Aujourd'hui je veux construire avec des gens, pas seul.</p>
+        <div style="display:flex;gap:12px;flex-wrap:wrap">
+          <a href="mailto:fernandezlucas.pro@outlook.fr" style="display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:99px;background:var(--bg);border:1px solid var(--line);font-size:13px;font-weight:700;color:var(--ink);text-decoration:none"><span class="ms" style="font-size:16px;color:var(--muted)">mail</span>fernandezlucas.pro@outlook.fr</a>
+          <a href="tel:0750983367" style="display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:99px;background:var(--bg);border:1px solid var(--line);font-size:13px;font-weight:700;color:var(--ink);text-decoration:none"><span class="ms" style="font-size:16px;color:var(--muted)">phone</span>07 50 98 33 67</a>
+          <div style="display:flex;align-items:center;gap:8px;padding:10px 16px;border-radius:99px;background:var(--bg);border:1px solid var(--line);font-size:13px;font-weight:700;color:var(--ink)"><span class="ms" style="font-size:16px;color:var(--muted)">location_on</span>4 impasse Jean Roussière</div>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="wrap"><div class="footer"><div class="footer-grid">
     <div><div class="footer-brand" style="flex-direction:column;gap:0;align-items:flex-start"><span style="font-size:22px;font-weight:800;color:var(--green);letter-spacing:-0.04em;line-height:1;display:block">Uber</span><span style="font-size:22px;font-weight:800;color:var(--ink);letter-spacing:-0.04em;line-height:1;display:block">Dev</span></div><div class="footer-tag">Réponse sous 24h.</div></div>
-    <div class="footer-meta">© 2026 · LET'S TALK</div>
+    <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px"><div style="font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--green)">Page éphémère · Créée pour Unipros</div><div class="footer-meta">© 2026 · LET'S TALK</div></div>
   </div></div></div>
 </section>
 
@@ -903,6 +957,27 @@ a{text-decoration:none;color:inherit}
   </div>
 </div>
 
+<!-- LDM MODAL -->
+<div class="booking-overlay" id="ldmOverlay" onclick="closeLdm()"></div>
+<div class="booking-sheet" id="ldmSheet">
+  <div class="sheet-handle"></div>
+  <div style="padding:0 0 8px;display:flex;align-items:center;justify-content:space-between">
+    <div>
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--green);margin-bottom:6px">Lettre de motivation · Unipros</div>
+      <div style="font-size:22px;font-weight:800;letter-spacing:-0.025em">Lucas Fernandez</div>
+    </div>
+    <button class="booking-close" onclick="closeLdm()"><span class="ms">close</span></button>
+  </div>
+  <div style="border-top:1px solid var(--line);padding-top:24px;font-size:15px;color:var(--ink-2);line-height:1.8">
+    <p style="margin-bottom:16px"><strong>Objet : Candidature Dev Full Stack · Growth Hacker / AI Builder</strong></p>
+    <p style="margin-bottom:16px">Après plusieurs années à entreprendre en solo — agences, SaaS, marketplaces — je cherche aujourd'hui à m'investir dans un projet sur la durée, avec une vraie équipe.</p>
+    <p style="margin-bottom:16px">Unipros, c'est exactement ce que je cherche. Le poste colle parfaitement à ce que je fais au quotidien : growth, automatisation, IA. J'utilise l'API Anthropic en production, je travaille sur des funnels, des outils d'acquisition et des interfaces IA — de la conception jusqu'au déploiement.</p>
+    <p style="margin-bottom:16px">J'ai une bonne culture du résultat et une maîtrise concrète de l'IA appliquée au business. J'ai fait le tour de l'entrepreneuriat solo — maintenant je veux m'investir dans une équipe sur la durée.</p>
+    <p style="margin-bottom:24px">Disponible rapidement, motivé, et pas du genre à faire du remplissage.</p>
+    <p style="font-weight:700">Lucas Fernandez</p>
+  </div>
+</div>
+
 <!-- BOOKING MODAL -->
 <div class="booking-overlay" id="bookingOverlay" onclick="closeBooking()"></div>
 <div class="booking-sheet" id="bookingSheet">
@@ -911,7 +986,7 @@ a{text-decoration:none;color:inherit}
     <div class="booking-head">
       <div>
         <div class="booking-title">Choisissez un créneau</div>
-        <div class="booking-sub">Entretien Growth Hacker / AI Builder · 30 min · Visio ou présentiel</div>
+        <div class="booking-sub">Entretien Dev Full Stack / Growth / IA · 30 min · Visio ou présentiel</div>
       </div>
       <button class="booking-close" onclick="closeBooking()"><span class="ms">close</span></button>
     </div>
@@ -943,6 +1018,16 @@ function hamGo(view){
   closeHam();
   go(view);
   document.querySelectorAll('[data-hamnav]').forEach(function(n){n.classList.toggle('active',n.getAttribute('data-hamnav')===view);});
+}
+
+// ===== LDM =====
+function openLdm(){
+  document.getElementById("ldmOverlay").classList.add("open");
+  document.getElementById("ldmSheet").classList.add("open");
+}
+function closeLdm(){
+  document.getElementById("ldmOverlay").classList.remove("open");
+  document.getElementById("ldmSheet").classList.remove("open");
 }
 
 // ===== LDM =====
@@ -1082,7 +1167,7 @@ function closeSkill(){
 
 // ===== DATA =====
 var PROJECTS=[
-  {id:'stacker',cat:'marketplace',url:'https://stacker-topaz.vercel.app/',title:'Stacker',grad:'linear-gradient(135deg,#b52330,#5a1018)',logo:'<span style="font-size:clamp(40px,6vw,68px);font-weight:800;color:#fff;letter-spacing:-0.04em">Stack<span style="color:rgba(255,255,255,0.5)">er</span></span>',
+  {id:'stacker',cat:'marketplace',url:'https://stacker-topaz.vercel.app/',url:'https://stacker-topaz.vercel.app/',title:'Stacker',grad:'linear-gradient(135deg,#b52330,#5a1018)',logo:'<span style="font-size:clamp(40px,6vw,68px);font-weight:800;color:#fff;letter-spacing:-0.04em">Stack<span style="color:rgba(255,255,255,0.5)">er</span></span>',
    rating:'5.0',meta:'Marketplace · SaaS',promo:'Produit phare',tags:['Marketplace','Supabase','Commission'],
    desc:"Une marketplace qui connecte les entreprises à un réseau de commerciaux indépendants. Les Stackers prennent des missions, vendent sous la marque du client, et touchent une commission. Modèle take-and-go, zéro friction, mes propres SaaS servent de premières missions.",
    stats:[['25%','Commission unifiée'],['13+','Produits catalogue'],['0','Friction onboarding']],
@@ -1092,17 +1177,17 @@ var PROJECTS=[
    desc:"La plateforme B2B de Stacker. Les entreprises achètent des RDV qualifiés, lancent des campagnes UGC, ou déploient une force de vente à la performance. Calculateurs live, abonnements récurrents, onboardings premium, modal de recharge de crédits.",
    stats:[['3','Modules B2B'],['0€','Si 0 résultat'],['48h','Premiers RDV']],
    feats:[['event_available','RDV qualifiés','Carte de France interactive, achat à l\'unité ou en abonnement récurrent avec remises par paliers.'],['videocam','Campagnes UGC','Configurateur de vidéos style Meta Ads, créateurs vérifiés, preuve de publication.'],['campaign','Force de vente','Déployez une équipe de closers à la performance, vous fixez la commission, 0 coût fixe.']]},
-  {id:'coeurdeville',cat:'civic',url:'https://coeur-de-ville.vercel.app/',title:'Cœur de Ville',grad:'linear-gradient(135deg,#2c4a3e,#14241d)',logo:'<div style="text-align:center"><div style="font-size:28px;font-weight:800;color:#fff;letter-spacing:-0.02em;line-height:1.2">Cœur de Ville</div><div style="font-size:8px;font-weight:600;color:rgba(255,255,255,0.45);letter-spacing:2.5px;margin-top:8px">PATRIMOINE &amp; DÉCOUVERTE</div></div>',
+  {id:'coeurdeville',cat:'civic',url:'https://coeur-de-ville.vercel.app/',url:'https://coeur-de-ville.vercel.app/',title:'Cœur de Ville',grad:'linear-gradient(135deg,#2c4a3e,#14241d)',logo:'<div style="text-align:center"><div style="font-size:28px;font-weight:800;color:#fff;letter-spacing:-0.02em;line-height:1.2">Cœur de Ville</div><div style="font-size:8px;font-weight:600;color:rgba(255,255,255,0.45);letter-spacing:2.5px;margin-top:8px">PATRIMOINE &amp; DÉCOUVERTE</div></div>',
    rating:'4.9',meta:'Civic Tech · Multi-villes',promo:'×16 ROI',tags:['Civic Tech','Gamification','Multi-villes'],
    desc:"Une application qui anime le commerce local des municipalités. Fiches commerçants vérifiées, quiz et mini-jeux, programme de fidélité. Déployée pour plusieurs villes du Gard et du Vaucluse, pitchée à l'intercommunalité du Grand Avignon.",
    stats:[['×16','ROI estimé'],['4','Villes déployées'],['5','Mini-jeux']],
    feats:[['storefront','Fiches commerçants','Profils de vrais commerces locaux avec données vérifiées, photos et infos pratiques.'],['sports_esports','Mini-jeux','Quiz, Photo Mystère, Mots Mêlés et plus, avec points de fidélité synchronisés.'],['location_city','Multi-villes','Architecture scalable : chaque ville a son espace, géré depuis une base commune.']]},
-  {id:'huntlist',cat:'saas',url:'https://www.huntlist.fr/alma-plus-landing.html',title:'Huntlist',grad:'#ffffff',logo:'<div style="display:flex;align-items:center;gap:14px"><div style="width:54px;height:54px;background:#3b82f6;border-radius:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span class="ms ms-fill" style="font-size:30px;color:#fff">keyboard_double_arrow_right</span></div><span style="font-size:28px;font-weight:700;color:#111;letter-spacing:-0.02em">huntlist.</span></div>',
+  {id:'huntlist',cat:'saas',url:'https://www.huntlist.fr/alma-plus-landing.html',url:'https://www.huntlist.fr/alma-plus-landing.html',title:'Huntlist',grad:'#ffffff',logo:'<div style="display:flex;align-items:center;gap:14px"><div style="width:54px;height:54px;background:#3b82f6;border-radius:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span class="ms ms-fill" style="font-size:30px;color:#fff">keyboard_double_arrow_right</span></div><span style="font-size:28px;font-weight:700;color:#111;letter-spacing:-0.02em">huntlist.</span></div>',
    rating:'4.8',meta:'SaaS · Prospection automatisée',promo:'IA · Autopilot',tags:['IA','Autopilot','Gmail OAuth'],
    desc:"Un SaaS de prospection B2B piloté par IA, clé en main. Agrégation multi-sources (Google Maps, INSEE, BODACC), emails générés par IA et envoyés depuis le vrai Gmail du client via OAuth, pilote automatique et call tracker avec gestion d'objections en direct. Le client ne configure rien.",
    stats:[['19€','À partir de /mois'],['0','Config client'],['100%','Piloté par IA']],
    feats:[['auto_awesome','Emails générés par IA','Chaque email est rédigé par l\'IA selon le prospect — personnalisation à grande échelle, envoyé depuis le vrai compte Gmail pour une délivrabilité maximale.'],['smart_toy','Pilote automatique','Détection des prospects, prise de contact et relances tournent en autopilot. Le commercial se concentre sur les RDV chauds.'],['support_agent','Objection handling live','Pendant l\'appel, l\'IA suggère la réponse à chaque objection en temps réel.']]},
-  {id:'inroom',cat:'mobile',url:'https://in-room-xi.vercel.app/',title:'InRoom',grad:'linear-gradient(135deg,#b52330,#1b1c1c)',logo:'<div style="display:flex;align-items:center;gap:2px"><span style="font-size:38px;font-weight:700;color:#fff;letter-spacing:-0.03em;line-height:1">InRoom</span><span style="font-size:38px;font-weight:700;color:#e84545;line-height:1">•</span></div>',
+  {id:'inroom',cat:'mobile',url:'https://in-room-xi.vercel.app/',url:'https://in-room-xi.vercel.app/',title:'InRoom',grad:'linear-gradient(135deg,#b52330,#1b1c1c)',logo:'<div style="display:flex;align-items:center;gap:2px"><span style="font-size:38px;font-weight:700;color:#fff;letter-spacing:-0.03em;line-height:1">InRoom</span><span style="font-size:38px;font-weight:700;color:#e84545;line-height:1">•</span></div>',
    rating:'4.9',meta:'Mobile · Hôtellerie',promo:'Premium',tags:['Mobile','Concierge','Temps réel'],
    desc:"Un concierge digital premium pour l'hôtellerie. Marketplace de prestataires, disponibilités en temps réel, météo intégrée, réservations. Avec dashboards staff et prestataires. Pensé mobile-first pour une expérience client haut de gamme.",
    stats:[['3','Interfaces dédiées'],['Live','Disponibilités'],['24/7','Concierge']],
