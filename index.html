@@ -37,16 +37,30 @@ body{font-family:'Plus Jakarta Sans',-apple-system,sans-serif;background:var(--b
 button{font-family:inherit}
 a{text-decoration:none;color:inherit}
 
-/* ===== SPLASH ===== */
-#splash{position:fixed;inset:0;z-index:10000;background:#06c167;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:24px;transition:opacity 0.5s,transform 0.5s}
-#splash.done{opacity:0;pointer-events:none;transform:translateY(-20px)}
-.splash-logo{font-size:clamp(36px,9vw,64px);font-weight:800;letter-spacing:-0.04em;color:#fff;opacity:0;animation:splashIn 0.6s 0.1s forwards}
-.splash-logo span{color:#0d100e}
-.splash-sub{font-size:14px;font-weight:600;color:rgba(255,255,255,0.8);letter-spacing:0.02em;opacity:0;animation:splashIn 0.6s 0.3s forwards}
-.splash-loader{width:160px;height:3px;background:rgba(255,255,255,0.25);border-radius:99px;overflow:hidden;opacity:0;animation:splashIn 0.6s 0.4s forwards}
-.splash-loader-fill{height:100%;width:0;background:#fff;border-radius:99px;animation:loadFill 1.3s 0.5s cubic-bezier(0.4,0,0.2,1) forwards}
+/* ===== ONBOARDING ===== */
+#splash{position:fixed;inset:0;z-index:10000;background:#0d0d0d;display:flex;align-items:center;justify-content:center;transition:opacity 0.6s,transform 0.6s}
+#splash.done{opacity:0;pointer-events:none;transform:translateY(-16px)}
+.ob-wrap{width:100%;max-width:560px;padding:0 32px;position:relative}
+.ob-step{position:absolute;top:50%;left:32px;right:32px;opacity:0;pointer-events:none;transition:opacity 0.5s,transform 0.5s;transform:translateY(calc(-50% + 20px))}
+.ob-step.active{opacity:1;pointer-events:all;transform:translateY(-50%)}
+.ob-step.out{opacity:0;transform:translateY(calc(-50% - 20px))}
+.ob-eyebrow{font-size:14px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);margin-bottom:16px}
+.ob-title{font-size:clamp(32px,7vw,56px);font-weight:800;letter-spacing:-0.04em;line-height:1.05;color:#fff;margin-bottom:16px}
+.ob-title .g{color:var(--green)}
+.ob-sub{font-size:16px;color:rgba(255,255,255,0.55);line-height:1.65;margin-bottom:32px;max-width:420px}
+.ob-items{display:flex;flex-direction:column;gap:12px;margin-bottom:32px}
+.ob-item{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08)}
+.ob-item .ms{font-size:20px;color:var(--green)}
+.ob-item-t{font-size:14px;font-weight:700;color:#fff}
+.ob-item-s{font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px}
+.ob-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:99px;background:var(--green);color:#fff;font-size:15px;font-weight:700;cursor:pointer;border:none;font-family:inherit;transition:all 0.2s}
+.ob-btn:hover{background:var(--green-dark);transform:scale(1.02)}
+.ob-btn-ghost{background:rgba(255,255,255,0.08);color:#fff}
+.ob-btn-ghost:hover{background:rgba(255,255,255,0.14);transform:scale(1.02)}
+.ob-progress{position:fixed;bottom:40px;left:50%;transform:translateX(-50%);display:flex;gap:8px}
+.ob-dot{width:6px;height:6px;border-radius:99px;background:rgba(255,255,255,0.2);transition:all 0.3s}
+.ob-dot.active{background:var(--green);width:20px}
 @keyframes splashIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
-@keyframes loadFill{to{width:100%}}
 
 /* ===== APP ===== */
 #app{opacity:0;transition:opacity 0.5s}
@@ -182,16 +196,16 @@ a{text-decoration:none;color:inherit}
 
 /* ===== FIT (Unipros) ===== */
 .fit-intro{font-size:16px;color:var(--ink-2);line-height:1.6;max-width:720px;margin-bottom:24px}
-.fit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
-.fit-card{background:var(--surface);border-radius:var(--radius-xl);padding:26px 28px;transition:transform 0.2s}
+.fit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+.fit-card{background:var(--surface);border-radius:var(--radius-xl);padding:40px 36px;transition:transform 0.2s}
 .fit-card:hover{transform:translateY(-3px)}
-.fit-ic{width:46px;height:46px;border-radius:12px;background:var(--green-bg);color:var(--green);display:flex;align-items:center;justify-content:center;margin-bottom:16px}
+.fit-ic{width:56px;height:56px;border-radius:14px;background:var(--green-bg);color:var(--green);display:flex;align-items:center;justify-content:center;margin-bottom:24px}
 .fit-ic .ms{font-size:24px}
-.fit-t{font-size:17px;font-weight:800;letter-spacing:-0.015em;margin-bottom:8px}
+.fit-t{font-size:17px;font-weight:800;letter-spacing:-0.015em;margin-bottom:14px}
 .fit-d{font-size:14.5px;color:var(--muted);line-height:1.55}
 
 /* ===== SECTION NUM & STEPS ===== */
-.section-num{font-size:10.5px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--green);margin-bottom:6px}
+.section-num{font-size:10.5px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--green);margin-bottom:12px}
 .steps-strip{display:flex;align-items:center;gap:8px;padding:20px 0 8px;overflow-x:auto;scrollbar-width:none}
 .steps-strip::-webkit-scrollbar{display:none}
 .step-pill{display:flex;align-items:center;gap:8px;padding:10px 18px;border-radius:99px;font-size:13px;font-weight:700;white-space:nowrap;background:var(--surface);color:var(--muted-2);flex-shrink:0;cursor:pointer;transition:background 0.18s}
@@ -214,18 +228,18 @@ a{text-decoration:none;color:inherit}
 .tl-stack{display:flex;gap:7px;flex-wrap:wrap}
 
 /* ===== STACK ===== */
-.stack-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.stack-grid{display:grid;grid-template-columns:1fr;gap:24px;align-items:start}
 .matrix-card{background:var(--surface);border-radius:var(--radius-xl);padding:36px}
 .matrix-head{text-align:center;margin-bottom:8px}
 .matrix-t{font-size:20px;font-weight:800;letter-spacing:-0.02em}
 .matrix-sub{font-size:12px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--muted);margin-top:6px}
 .radar-wrap{display:flex;justify-content:center;padding:16px 0}
-.tech-group{margin-bottom:24px}
-.tech-group-head{display:flex;align-items:center;gap:10px;margin-bottom:14px}
+.tech-group{margin-bottom:48px}
+.tech-group-head{display:flex;align-items:center;gap:10px;margin-bottom:20px}
 .tech-group-head .ms{font-size:20px;color:var(--green)}
 .tech-group-t{font-size:13px;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;color:var(--ink-2)}
 .tech-chips{display:flex;gap:8px;flex-wrap:wrap}
-.chip{padding:9px 16px;border-radius:99px;background:var(--surface);color:var(--ink-2);font-size:13px;font-weight:600;border:1px solid var(--line);transition:all 0.18s;cursor:default}
+.chip{padding:12px 20px;border-radius:99px;background:var(--surface);color:var(--ink-2);font-size:13px;font-weight:600;border:1px solid var(--line);transition:all 0.18s;cursor:default}
 .chip:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
 .focus-row{padding:16px 0;border-bottom:1px solid var(--line)}
 .focus-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px}
@@ -351,6 +365,25 @@ a{text-decoration:none;color:inherit}
 .footer-tag{font-size:14px;color:var(--muted);margin-top:6px}
 .footer-meta{font-size:12px;color:var(--muted-2);font-weight:600}
 
+
+/* ===== HAMBURGER MENU ===== */
+.ham-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:200;opacity:0;pointer-events:none;transition:opacity 0.3s}
+.ham-overlay.open{opacity:1;pointer-events:all}
+.ham-panel{position:fixed;top:0;right:0;bottom:0;width:280px;background:#fff;z-index:201;transform:translateX(100%);transition:transform 0.38s cubic-bezier(0.22,1,0.36,1);display:flex;flex-direction:column;padding:0}
+.ham-panel.open{transform:translateX(0)}
+.ham-head{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;border-bottom:1px solid var(--line)}
+.ham-logo{display:flex;flex-direction:column;gap:0;line-height:1}
+.ham-logo span:first-child{font-size:16px;font-weight:800;color:var(--green);letter-spacing:-0.04em}
+.ham-logo span:last-child{font-size:16px;font-weight:800;color:var(--ink);letter-spacing:-0.04em}
+.ham-close{width:36px;height:36px;border-radius:50%;background:var(--surface);border:none;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.ham-nav{display:flex;flex-direction:column;gap:4px;padding:16px 12px;flex:1}
+.ham-link{display:flex;align-items:center;gap:14px;padding:14px 16px;border-radius:12px;font-size:15px;font-weight:700;color:var(--ink-2);cursor:pointer;background:none;border:none;font-family:inherit;text-align:left;transition:background 0.18s;width:100%}
+.ham-link:hover{background:var(--surface)}
+.ham-link.active{background:var(--ink);color:#fff}
+.ham-link .ms{font-size:20px}
+.ham-footer{padding:16px 24px;border-top:1px solid var(--line)}
+.ham-book{width:100%;padding:14px;border-radius:12px;background:var(--ink);color:#fff;font-size:14px;font-weight:700;cursor:pointer;border:none;font-family:inherit;display:flex;align-items:center;justify-content:center;gap:8px;transition:background 0.18s}
+.ham-book:hover{background:#333}
 /* ===== TABBAR ===== */
 .tabbar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:100;height:64px;background:#fff;border-top:1px solid var(--line);align-items:center;justify-content:space-around;padding:0 8px}
 .tab{display:flex;flex-direction:column;align-items:center;gap:3px;background:none;border:none;cursor:pointer;color:var(--muted-2);padding:6px 12px;flex:1}
@@ -377,11 +410,47 @@ a{text-decoration:none;color:inherit}
 </head>
 <body>
 
-<!-- SPLASH -->
+<!-- ONBOARDING -->
 <div id="splash">
-  <div class="splash-logo" style="text-align:left;line-height:0.95"><span style="display:block;color:#0d100e">Uber</span><span style="display:block;color:#fff">Dev</span></div>
-  <div class="splash-sub">GROWTH HACKER × AI BUILDER</div>
-  <div class="splash-loader"><div class="splash-loader-fill"></div></div>
+  <div class="ob-wrap">
+    <div class="ob-step active" id="ob-1">
+      <div class="ob-eyebrow">Bienvenue</div>
+      <div class="ob-title">Chez <span class="g">Uber Dev.</span></div>
+      <div class="ob-sub">Le restaurant de Lucas Fernandez — Dev Full Stack, Growth Hacker & AI Builder.</div>
+      <button class="ob-btn" onclick="obNext(2)"><span class="ms">arrow_forward</span>Entrer</button>
+    </div>
+    <div class="ob-step" id="ob-2">
+      <div class="ob-eyebrow">Au menu aujourd'hui</div>
+      <div class="ob-title">Ce qu'on <span class="g">sert.</span></div>
+      <div class="ob-items">
+        <div class="ob-item"><span class="ms">restaurant_menu</span><div><div class="ob-item-t">Mes plats</div><div class="ob-item-s">6 projets conçus et déployés en solo</div></div></div>
+        <div class="ob-item"><span class="ms">layers</span><div><div class="ob-item-t">Ma stack technique</div><div class="ob-item-s">Full Stack · IA · Growth · SEO</div></div></div>
+        <div class="ob-item"><span class="ms">badge</span><div><div class="ob-item-t">Mon CV complet</div><div class="ob-item-s">Parcours, lettre de motivation, créneaux</div></div></div>
+      </div>
+      <button class="ob-btn" onclick="obNext(3)"><span class="ms">arrow_forward</span>Continuer</button>
+    </div>
+    <div class="ob-step" id="ob-3">
+      <div class="ob-eyebrow">La spécialité du chef</div>
+      <div class="ob-title">Pourquoi <span class="g">Unipros.</span></div>
+      <div class="ob-sub">Mes projets tournent ou ont été cédés. J'ai fait le tour de l'entrepreneuriat — c'est une belle école, mais après plusieurs années en solo je cherche autre chose : la dynamique d'une équipe, des challenges plus grands, et la stabilité d'un vrai poste. Unipros coche tout.</div>
+      <button class="ob-btn" onclick="obNext(4)"><span class="ms">arrow_forward</span>La suite</button>
+    </div>
+    <div class="ob-step" id="ob-4">
+      <div class="ob-eyebrow">Bonne dégustation</div>
+      <div class="ob-title">C'est <span class="g">parti.</span></div>
+      <div class="ob-sub">Le menu vous attend. N'hésitez pas à réserver un créneau directement depuis le portfolio.</div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap">
+        <button class="ob-btn" onclick="obFinish()"><span class="ms">restaurant_menu</span>Voir le menu</button>
+        <button class="ob-btn ob-btn-ghost" onclick="obFinishCv()"><span class="ms">badge</span>Aller au CV</button>
+      </div>
+    </div>
+  </div>
+  <div class="ob-progress">
+    <div class="ob-dot active" id="od-1"></div>
+    <div class="ob-dot" id="od-2"></div>
+    <div class="ob-dot" id="od-3"></div>
+    <div class="ob-dot" id="od-4"></div>
+  </div>
 </div>
 
 <div id="app">
@@ -400,7 +469,7 @@ a{text-decoration:none;color:inherit}
     <button class="header-link" data-nav="cv" onclick="go('cv')">CV</button>
   </nav>
   <button class="header-cart" onclick="openBooking()"><span class="ms ms-fill" style="font-size:18px">add_shopping_cart</span><span class="cart-label">Ajouter un entretien au panier</span></button>
-  <button class="header-burger" onclick="go('contact')"><span class="ms">menu</span></button></header>
+  <button class="header-burger" onclick="openHam()"><span class="ms">menu</span></button></header>
 
 <!-- ============ HOME ============ -->
 <section class="view active" id="view-home">
@@ -533,15 +602,11 @@ a{text-decoration:none;color:inherit}
     <div class="section">
       <div class="section-head reveal"><h2 class="section-title">Ma cuisine technique</h2></div>
       <div class="stack-grid">
-        <div class="matrix-card reveal">
-          <div class="matrix-head"><div class="matrix-t">Cœur de compétence</div><div class="matrix-sub">Growth × IA × Build</div></div>
-          <div class="radar-wrap"><svg id="radar" width="340" height="300" viewBox="0 0 340 300"></svg></div>
-        </div>
         <div class="reveal">
-          <div class="tech-group"><div class="tech-group-head"><span class="ms">trending_up</span><div class="tech-group-t">Growth & Acquisition</div></div><div class="tech-chips"><span class="chip">SEO programmatique</span><span class="chip">Cold email</span><span class="chip">Funnels</span><span class="chip">TikTok / UGC</span><span class="chip">Landing pages</span></div></div>
-          <div class="tech-group"><div class="tech-group-head"><span class="ms">smart_toy</span><div class="tech-group-t">IA & Automatisation</div></div><div class="tech-chips"><span class="chip">Claude / Anthropic API</span><span class="chip">Claude Code</span><span class="chip">Prompt engineering</span><span class="chip">Agents & pipelines</span><span class="chip">Génération de contenu</span><span class="chip">Scraping / APIs</span></div></div>
-          <div class="tech-group"><div class="tech-group-head"><span class="ms">dns</span><div class="tech-group-t">Backend & Data</div></div><div class="tech-chips"><span class="chip">Supabase</span><span class="chip">PostgreSQL</span><span class="chip">Gmail OAuth</span><span class="chip">Stripe / Mollie</span><span class="chip">SumUp</span></div></div>
-          <div class="tech-group"><div class="tech-group-head"><span class="ms">code</span><div class="tech-group-t">Build & Deploy</div></div><div class="tech-chips"><span class="chip">HTML/CSS/JS</span><span class="chip">Single-file</span><span class="chip">Vercel</span><span class="chip">GitHub</span><span class="chip">Mobile-first</span></div></div>
+          <div class="tech-group"><div class="tech-group-head"><span class="ms">trending_up</span><div class="tech-group-t">Growth & Acquisition</div></div><div class="tech-chips"><span class="chip">A/B Testing</span><span class="chip">Funnels de conversion</span><span class="chip">Cold email automatisé</span><span class="chip">SEO programmatique</span><span class="chip">Landing pages</span><span class="chip">Analytics</span></div></div>
+          <div class="tech-group"><div class="tech-group-head"><span class="ms">neurology</span><div class="tech-group-t">IA & Automatisation</div></div><div class="tech-chips"><span class="chip">Claude / Anthropic API</span><span class="chip">Claude Code</span><span class="chip">Prompt engineering</span><span class="chip">Agents IA</span><span class="chip">Workflows automatisés</span><span class="chip">Scraping / APIs</span></div></div>
+          <div class="tech-group"><div class="tech-group-head"><span class="ms">code</span><div class="tech-group-t">Développement Full Stack</div></div><div class="tech-chips"><span class="chip">HTML / CSS / JS</span><span class="chip">Supabase</span><span class="chip">PostgreSQL</span><span class="chip">Vercel</span><span class="chip">GitHub</span><span class="chip">APIs REST</span></div></div>
+          <div class="tech-group"><div class="tech-group-head"><span class="ms">dashboard</span><div class="tech-group-t">Interfaces & UX</div></div><div class="tech-chips"><span class="chip">Design system</span><span class="chip">Mobile-first</span><span class="chip">Onboarding</span><span class="chip">Dashboard B2B</span><span class="chip">Stripe / Mollie</span></div></div>
         </div>
       </div>
     </div>
@@ -767,6 +832,25 @@ a{text-decoration:none;color:inherit}
 
 </div>
 
+<!-- HAMBURGER MENU -->
+<div class="ham-overlay" id="hamOverlay" onclick="closeHam()"></div>
+<div class="ham-panel" id="hamPanel">
+  <div class="ham-head">
+    <div class="ham-logo"><span>Uber</span><span>Dev</span></div>
+    <button class="ham-close" onclick="closeHam()"><span class="ms">close</span></button>
+  </div>
+  <nav class="ham-nav">
+    <button class="ham-link active" data-hamnav="home" onclick="hamGo('home')"><span class="ms">home</span>Accueil</button>
+    <button class="ham-link" data-hamnav="work" onclick="hamGo('work')"><span class="ms">restaurant_menu</span>Mes plats</button>
+    <button class="ham-link" data-hamnav="stack" onclick="hamGo('stack')"><span class="ms">layers</span>Stack</button>
+    <button class="ham-link" data-hamnav="cv" onclick="hamGo('cv')"><span class="ms">badge</span>CV</button>
+    <button class="ham-link" data-hamnav="contact" onclick="hamGo('contact')"><span class="ms">mail</span>Contact</button>
+  </nav>
+  <div class="ham-footer">
+    <button class="ham-book" onclick="closeHam();openBooking()"><span class="ms ms-fill">add_shopping_cart</span>Ajouter un entretien</button>
+  </div>
+</div>
+
 <!-- TABBAR -->
 <nav class="tabbar">
   <button class="tab active" data-nav="home" onclick="go('home')"><span class="ms">home</span><span class="tab-lbl">Accueil</span></button>
@@ -846,6 +930,21 @@ a{text-decoration:none;color:inherit}
 </div>
 
 <script>
+// ===== HAMBURGER =====
+function openHam(){
+  document.getElementById('hamOverlay').classList.add('open');
+  document.getElementById('hamPanel').classList.add('open');
+}
+function closeHam(){
+  document.getElementById('hamOverlay').classList.remove('open');
+  document.getElementById('hamPanel').classList.remove('open');
+}
+function hamGo(view){
+  closeHam();
+  go(view);
+  document.querySelectorAll('[data-hamnav]').forEach(function(n){n.classList.toggle('active',n.getAttribute('data-hamnav')===view);});
+}
+
 // ===== LDM =====
 function openLdm(){
   document.getElementById("ldmOverlay").classList.add("open");
@@ -993,13 +1092,13 @@ var PROJECTS=[
    desc:"La plateforme B2B de Stacker. Les entreprises achètent des RDV qualifiés, lancent des campagnes UGC, ou déploient une force de vente à la performance. Calculateurs live, abonnements récurrents, onboardings premium, modal de recharge de crédits.",
    stats:[['3','Modules B2B'],['0€','Si 0 résultat'],['48h','Premiers RDV']],
    feats:[['event_available','RDV qualifiés','Carte de France interactive, achat à l\'unité ou en abonnement récurrent avec remises par paliers.'],['videocam','Campagnes UGC','Configurateur de vidéos style Meta Ads, créateurs vérifiés, preuve de publication.'],['campaign','Force de vente','Déployez une équipe de closers à la performance, vous fixez la commission, 0 coût fixe.']]},
-  {id:'coeurdeville',cat:'civic',url:'https://coeur-de-ville.vercel.app/',title:'Cœur de Ville',grad:'linear-gradient(135deg,#2c4a3e,#14241d)',logo:'<div style="display:flex;align-items:center;gap:16px"><span class="ms ms-fill" style="font-size:70px;color:rgba(255,255,255,0.92)">location_on</span><div style="text-align:left"><div style="font-size:21px;font-weight:800;color:#fff;letter-spacing:-0.02em;line-height:1.1">Cœur de Ville</div><div style="font-size:8px;font-weight:600;color:rgba(255,255,255,0.45);letter-spacing:2.5px;margin-top:7px">PATRIMOINE &amp; DÉCOUVERTE</div></div></div>',
+  {id:'coeurdeville',cat:'civic',url:'https://coeur-de-ville.vercel.app/',title:'Cœur de Ville',grad:'linear-gradient(135deg,#2c4a3e,#14241d)',logo:'<div style="text-align:center"><div style="font-size:28px;font-weight:800;color:#fff;letter-spacing:-0.02em;line-height:1.2">Cœur de Ville</div><div style="font-size:8px;font-weight:600;color:rgba(255,255,255,0.45);letter-spacing:2.5px;margin-top:8px">PATRIMOINE &amp; DÉCOUVERTE</div></div>',
    rating:'4.9',meta:'Civic Tech · Multi-villes',promo:'×16 ROI',tags:['Civic Tech','Gamification','Multi-villes'],
    desc:"Une application qui anime le commerce local des municipalités. Fiches commerçants vérifiées, quiz et mini-jeux, programme de fidélité. Déployée pour plusieurs villes du Gard et du Vaucluse, pitchée à l'intercommunalité du Grand Avignon.",
    stats:[['×16','ROI estimé'],['4','Villes déployées'],['5','Mini-jeux']],
    feats:[['storefront','Fiches commerçants','Profils de vrais commerces locaux avec données vérifiées, photos et infos pratiques.'],['sports_esports','Mini-jeux','Quiz, Photo Mystère, Mots Mêlés et plus, avec points de fidélité synchronisés.'],['location_city','Multi-villes','Architecture scalable : chaque ville a son espace, géré depuis une base commune.']]},
   {id:'huntlist',cat:'saas',url:'https://www.huntlist.fr/alma-plus-landing.html',title:'Huntlist',grad:'#ffffff',logo:'<div style="display:flex;align-items:center;gap:14px"><div style="width:54px;height:54px;background:#3b82f6;border-radius:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span class="ms ms-fill" style="font-size:30px;color:#fff">keyboard_double_arrow_right</span></div><span style="font-size:28px;font-weight:700;color:#111;letter-spacing:-0.02em">huntlist.</span></div>',
-   rating:'4.8',meta:'SaaS · Prospection IA',promo:'IA · Autopilot',tags:['IA','Autopilot','Gmail OAuth'],
+   rating:'4.8',meta:'SaaS · Prospection automatisée',promo:'IA · Autopilot',tags:['IA','Autopilot','Gmail OAuth'],
    desc:"Un SaaS de prospection B2B piloté par IA, clé en main. Agrégation multi-sources (Google Maps, INSEE, BODACC), emails générés par IA et envoyés depuis le vrai Gmail du client via OAuth, pilote automatique et call tracker avec gestion d'objections en direct. Le client ne configure rien.",
    stats:[['19€','À partir de /mois'],['0','Config client'],['100%','Piloté par IA']],
    feats:[['auto_awesome','Emails générés par IA','Chaque email est rédigé par l\'IA selon le prospect — personnalisation à grande échelle, envoyé depuis le vrai compte Gmail pour une délivrabilité maximale.'],['smart_toy','Pilote automatique','Détection des prospects, prise de contact et relances tournent en autopilot. Le commercial se concentre sur les RDV chauds.'],['support_agent','Objection handling live','Pendant l\'appel, l\'IA suggère la réponse à chaque objection en temps réel.']]},
@@ -1082,7 +1181,7 @@ function go(view){
   window.scrollTo({top:0,behavior:'instant'});
   if(view==='work')renderWork('all');
   setTimeout(runReveal,40);setTimeout(runCounters,80);
-  if(view==='stack'){setTimeout(drawRadar,200);setTimeout(runFocus,400);}
+  if(view==='stack'){setTimeout(runFocus,400);}
   if(view==='cv'){setTimeout(function(){document.querySelectorAll('#view-cv .reveal').forEach(function(el){el.classList.add('in');});},80);}
   var fab=document.getElementById('fabCv');
   if(fab)fab.classList.toggle('visible',view==='home');
@@ -1117,15 +1216,35 @@ function drawRadar(){
   setTimeout(function(){dataPts.forEach(function(p){var c=document.createElementNS(ns,'circle');c.setAttribute('cx',p[0]);c.setAttribute('cy',p[1]);c.setAttribute('r','3.5');c.setAttribute('fill','#06c167');svg.appendChild(c);});},950);
 }
 
+// ===== ONBOARDING =====
+var obCurrent=1;
+function obNext(n){
+  var cur=document.getElementById('ob-'+obCurrent);
+  cur.classList.remove('active');
+  cur.classList.add('out');
+  setTimeout(function(){cur.classList.remove('out');},500);
+  obCurrent=n;
+  document.getElementById('ob-'+n).classList.add('active');
+  document.querySelectorAll('.ob-dot').forEach(function(d,i){d.classList.toggle('active',i===n-1);});
+}
+function obFinish(){
+  document.getElementById('splash').classList.add('done');
+  document.getElementById('app').classList.add('ready');
+  setTimeout(function(){document.getElementById('splash').style.display='none';},600);
+  setTimeout(function(){runReveal();runCounters();},400);
+  go('home');
+}
+function obFinishCv(){
+  document.getElementById('splash').classList.add('done');
+  document.getElementById('app').classList.add('ready');
+  setTimeout(function(){document.getElementById('splash').style.display='none';},600);
+  setTimeout(function(){runReveal();runCounters();},400);
+  go('cv');
+}
+
 // ===== INIT =====
 renderHome();
 renderSkills();
-setTimeout(function(){
-  document.getElementById('splash').classList.add('done');
-  document.getElementById('app').classList.add('ready');
-  setTimeout(function(){document.getElementById('splash').style.display='none';},500);
-  setTimeout(function(){runReveal();runCounters();},300);
-},1900);
 </script>
 
 </body>
