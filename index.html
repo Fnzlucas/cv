@@ -1213,7 +1213,7 @@ var PROJECTS=[
    desc:"Une application qui anime le commerce local des municipalités. Fiches commerçants vérifiées, quiz et mini-jeux, programme de fidélité. Déployée pour plusieurs villes du Gard et du Vaucluse, pitchée à l'intercommunalité du Grand Avignon.",
    stats:[['×16','ROI estimé'],['4','Villes déployées'],['5','Mini-jeux']],
    feats:[['storefront','Fiches commerçants','Profils de vrais commerces locaux avec données vérifiées, photos et infos pratiques.'],['sports_esports','Mini-jeux','Quiz, Photo Mystère, Mots Mêlés et plus, avec points de fidélité synchronisés.'],['location_city','Multi-villes','Architecture scalable : chaque ville a son espace, géré depuis une base commune.']]},
-  {id:'huntlist',cat:'saas',url:'https://www.huntlist.fr/alma-plus-landing.html',url:'https://www.huntlist.fr/alma-plus-landing.html',title:'Huntlist',grad:'#ffffff',logo:'<div style="display:flex;align-items:center;gap:14px"><div style="width:54px;height:54px;background:#3b82f6;border-radius:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span class="ms ms-fill" style="font-size:30px;color:#fff">keyboard_double_arrow_right</span></div><span style="font-size:28px;font-weight:700;color:#111;letter-spacing:-0.02em">huntlist.</span></div>',
+  {id:'huntlist',cat:'saas',url:'https://www.huntlist.fr/alma-plus-landing.html',url:'https://www.huntlist.fr/alma-plus-landing.html',title:'Huntlist',grad:'#ffffff',logoSmall:'<div style="width:54px;height:54px;background:#3b82f6;border-radius:13px;display:flex;align-items:center;justify-content:center"><span class="ms ms-fill" style="font-size:28px;color:#fff">keyboard_double_arrow_right</span></div>',logo:'<div style="display:flex;align-items:center;gap:14px"><div style="width:54px;height:54px;background:#3b82f6;border-radius:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span class="ms ms-fill" style="font-size:30px;color:#fff">keyboard_double_arrow_right</span></div><span style="font-size:28px;font-weight:700;color:#111;letter-spacing:-0.02em">huntlist.</span></div>',
    rating:'4.8',meta:'SaaS · Prospection automatisée',promo:'IA · Autopilot',tags:['IA','Autopilot','Gmail OAuth'],
    desc:"Un SaaS de prospection B2B piloté par IA, clé en main. Agrégation multi-sources (Google Maps, INSEE, BODACC), emails générés par IA et envoyés depuis le vrai Gmail du client via OAuth, pilote automatique et call tracker avec gestion d'objections en direct. Le client ne configure rien.",
    stats:[['19€','À partir de /mois'],['0','Config client'],['100%','Piloté par IA']],
@@ -1269,13 +1269,12 @@ function renderHome(){
   }).join('');
 
   // Nouveautés — Huntlist + Stacker uniquement
+  var novelLogos={'huntlist':'<div style="width:44px;height:44px;background:#3b82f6;border-radius:10px;display:flex;align-items:center;justify-content:center"><span class="ms ms-fill" style="font-size:24px;color:#fff">keyboard_double_arrow_right</span></div>','stacker':'<span style="font-size:22px;font-weight:800;color:#fff;letter-spacing:-0.04em">St.</span>'};
   var listCards=sorted.slice(2,4);
   var el2=document.getElementById('homeListNew');
   if(el2)el2.innerHTML=listCards.map(function(p){
-    return '<div style="display:flex;align-items:center;gap:14px;cursor:pointer;padding:12px 0;border-bottom:1px solid var(--line)" onclick="openDetail(\''+p.id+'\')">'+
-      '<div style="width:80px;height:80px;border-radius:10px;overflow:hidden;flex-shrink:0;background:'+p.grad+';display:flex;align-items:center;justify-content:center">'+
-        '<div style="transform:scale(0.5);transform-origin:center">'+p.logo+'</div>'+
-      '</div>'+
+    return '<div style="display:flex;align-items:center;gap:14px;cursor:pointer;padding:12px 0;border-bottom:1px solid var(--line)" onclick="openDetail(\'' + p.id + '\')">'+
+      '<div style="width:80px;height:80px;border-radius:14px;flex-shrink:0;background:'+p.grad+';display:flex;align-items:center;justify-content:center;border:1px solid var(--line)">'+(novelLogos[p.id]||'')+'</div>'+
       '<div style="flex:1">'+
         '<div style="display:flex;align-items:flex-start;justify-content:space-between">'+
           '<div style="font-size:14px;font-weight:700">'+p.title+'</div>'+
