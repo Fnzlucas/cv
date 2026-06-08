@@ -38,29 +38,26 @@ button{font-family:inherit}
 a{text-decoration:none;color:inherit}
 
 /* ===== ONBOARDING ===== */
-#splash{position:fixed;inset:0;z-index:10000;background:#0d0d0d;display:flex;align-items:center;justify-content:center;transition:opacity 0.6s,transform 0.6s}
-#splash.done{opacity:0;pointer-events:none;transform:translateY(-16px)}
-.ob-wrap{width:100%;max-width:560px;padding:0 32px;position:relative}
-.ob-step{position:absolute;top:50%;left:32px;right:32px;opacity:0;pointer-events:none;transition:opacity 0.5s,transform 0.5s;transform:translateY(calc(-50% + 20px))}
-.ob-step.active{opacity:1;pointer-events:all;transform:translateY(-50%)}
-.ob-step.out{opacity:0;transform:translateY(calc(-50% - 20px))}
-.ob-eyebrow{font-size:14px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--green);margin-bottom:16px}
-.ob-title{font-size:clamp(32px,7vw,56px);font-weight:800;letter-spacing:-0.04em;line-height:1.05;color:#fff;margin-bottom:16px}
-.ob-title .g{color:var(--green)}
-.ob-sub{font-size:16px;color:rgba(255,255,255,0.55);line-height:1.65;margin-bottom:32px;max-width:420px}
-.ob-items{display:flex;flex-direction:column;gap:12px;margin-bottom:32px}
-.ob-item{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:12px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.08)}
-.ob-item .ms{font-size:20px;color:var(--green)}
-.ob-item-t{font-size:14px;font-weight:700;color:#fff}
-.ob-item-s{font-size:12px;color:rgba(255,255,255,0.45);margin-top:2px}
-.ob-btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:99px;background:var(--green);color:#fff;font-size:15px;font-weight:700;cursor:pointer;border:none;font-family:inherit;transition:all 0.2s}
-.ob-btn:hover{background:var(--green-dark);transform:scale(1.02)}
-.ob-btn-ghost{background:rgba(255,255,255,0.08);color:#fff}
-.ob-btn-ghost:hover{background:rgba(255,255,255,0.14);transform:scale(1.02)}
-.ob-progress{position:fixed;bottom:40px;left:50%;transform:translateX(-50%);display:flex;gap:8px}
-.ob-dot{width:6px;height:6px;border-radius:99px;background:rgba(255,255,255,0.2);transition:all 0.3s}
-.ob-dot.active{background:var(--green);width:20px}
-@keyframes splashIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+#splash{position:fixed;inset:0;z-index:10000;display:flex;align-items:stretch;justify-content:center;transition:opacity 0.5s}
+#splash.done{opacity:0;pointer-events:none}
+.ob-slide{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:48px 32px 56px;opacity:0;pointer-events:none;transition:opacity 0.4s,transform 0.4s;transform:translateX(40px)}
+.ob-slide.active{opacity:1;pointer-events:all;transform:translateX(0)}
+.ob-slide.out{opacity:0;transform:translateX(-40px)}
+.ob-slide-bg{position:absolute;inset:0;background-size:cover;background-position:center;z-index:0}
+.ob-slide-overlay{position:absolute;inset:0;z-index:1}
+.ob-slide-content{position:relative;z-index:2}
+.ob-label{font-size:13px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.6);margin-bottom:12px}
+.ob-big-title{font-size:clamp(36px,8vw,64px);font-weight:800;letter-spacing:-0.04em;line-height:1.0;color:#fff;margin-bottom:14px}
+.ob-big-title .g{color:var(--green)}
+.ob-big-sub{font-size:16px;color:rgba(255,255,255,0.7);line-height:1.55;margin-bottom:32px;max-width:400px}
+.ob-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:16px 32px;border-radius:12px;background:var(--green);color:#fff;font-size:16px;font-weight:800;cursor:pointer;border:none;font-family:inherit;transition:all 0.2s;width:100%;max-width:320px}
+.ob-cta:hover{background:var(--green-dark)}
+.ob-cta-ghost{background:rgba(255,255,255,0.12);color:#fff}
+.ob-cta-ghost:hover{background:rgba(255,255,255,0.2)}
+.ob-dots{display:flex;gap:6px;margin-bottom:20px}
+.ob-dot{width:6px;height:6px;border-radius:99px;background:rgba(255,255,255,0.3);transition:all 0.3s}
+.ob-dot.active{background:#fff;width:20px}
+@keyframes splashIn{from{opacity:0}to{opacity:1}}
 
 /* ===== APP ===== */
 #app{opacity:0;transition:opacity 0.5s}
@@ -421,45 +418,61 @@ a{text-decoration:none;color:inherit}
 
 <!-- ONBOARDING -->
 <div id="splash">
-  <div class="ob-wrap">
-    <div class="ob-step active" id="ob-1">
-      <div class="ob-eyebrow">Bienvenue</div>
-      <div class="ob-title">Chez <span class="g">Uber Dev.</span></div>
-      <div class="ob-sub">Le restaurant de Lucas Fernandez — Dev Full Stack, Growth Hacker & AI Builder.</div>
-      <button class="ob-btn" onclick="obNext(2)"><span class="ms">arrow_forward</span>Entrer</button>
+
+  <!-- SLIDE 1 -->
+  <div class="ob-slide active" id="ob-1">
+    <div class="ob-slide-bg" style="background:linear-gradient(160deg,#0d2818 0%,#051a0e 100%)"></div>
+    <div class="ob-slide-overlay" style="background:linear-gradient(to top,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0.1) 60%)"></div>
+    <div class="ob-slide-content">
+      <div class="ob-dots"><div class="ob-dot active"></div><div class="ob-dot"></div><div class="ob-dot"></div><div class="ob-dot"></div></div>
+      <div class="ob-big-title">Bienvenue chez<br><span class="g">Uber Dev.</span></div>
+      <div class="ob-big-sub">Le restaurant de Lucas Fernandez. Des produits Full Stack & IA livrés chauds.</div>
+      <button class="ob-cta" onclick="obNext(2)">Démarrer</button>
     </div>
-    <div class="ob-step" id="ob-2">
-      <div class="ob-eyebrow">Au menu aujourd'hui</div>
-      <div class="ob-title">Ce qu'on <span class="g">sert.</span></div>
-      <div class="ob-items">
-        <div class="ob-item"><span class="ms">restaurant_menu</span><div><div class="ob-item-t">Mes plats</div><div class="ob-item-s">6 projets conçus et déployés en solo</div></div></div>
-        <div class="ob-item"><span class="ms">layers</span><div><div class="ob-item-t">Ma stack technique</div><div class="ob-item-s">Full Stack · IA · Growth · SEO</div></div></div>
-        <div class="ob-item"><span class="ms">badge</span><div><div class="ob-item-t">Mon CV complet</div><div class="ob-item-s">Parcours, lettre de motivation, créneaux</div></div></div>
-      </div>
-      <button class="ob-btn" onclick="obNext(3)"><span class="ms">arrow_forward</span>Continuer</button>
+  </div>
+
+  <!-- SLIDE 2 -->
+  <div class="ob-slide" id="ob-2">
+    <div class="ob-slide-bg" style="background:linear-gradient(160deg,#1a1a0d 0%,#0d0d05 100%)"></div>
+    <div class="ob-slide-overlay" style="background:linear-gradient(to top,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0.1) 60%)"></div>
+    <div class="ob-slide-content">
+      <div class="ob-dots"><div class="ob-dot"></div><div class="ob-dot active"></div><div class="ob-dot"></div><div class="ob-dot"></div></div>
+      <div class="ob-label">Au menu aujourd'hui</div>
+      <div class="ob-big-title">Ce qu'on <span class="g">sert.</span></div>
+      <div class="ob-big-sub">6 projets live, une stack tech complète, et un CV avec créneaux d'entretien intégrés.</div>
+      <button class="ob-cta" onclick="obNext(3)">Continuer</button>
     </div>
-    <div class="ob-step" id="ob-3">
-      <div class="ob-eyebrow">La spécialité du chef</div>
-      <div class="ob-title">Pourquoi <span class="g">Unipros.</span></div>
-      <div class="ob-sub">Mes projets tournent ou ont été cédés. J'ai fait le tour de l'entrepreneuriat — c'est une belle école, mais après plusieurs années en solo je cherche autre chose : la dynamique d'une équipe, des challenges plus grands, et la stabilité d'un vrai poste. Unipros coche tout.</div>
-      <button class="ob-btn" onclick="obNext(4)"><span class="ms">arrow_forward</span>La suite</button>
+  </div>
+
+  <!-- SLIDE 3 -->
+  <div class="ob-slide" id="ob-3">
+    <div class="ob-slide-bg" style="background:linear-gradient(160deg,#0d0d1a 0%,#05050d 100%)"></div>
+    <div class="ob-slide-overlay" style="background:linear-gradient(to top,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0.1) 60%)"></div>
+    <div class="ob-slide-content">
+      <div class="ob-dots"><div class="ob-dot"></div><div class="ob-dot"></div><div class="ob-dot active"></div><div class="ob-dot"></div></div>
+      <div class="ob-label">La spécialité du chef</div>
+      <div class="ob-big-title">Pourquoi <span class="g">Unipros.</span></div>
+      <div class="ob-big-sub">J'ai fait le tour de l'entrepreneuriat. Ce que je cherche maintenant, c'est une équipe, des challenges, et la durée.</div>
+      <button class="ob-cta" onclick="obNext(4)">La suite</button>
     </div>
-    <div class="ob-step" id="ob-4">
-      <div class="ob-eyebrow">Bonne dégustation</div>
-      <div class="ob-title">C'est <span class="g">parti.</span></div>
-      <div class="ob-sub">Le menu vous attend. N'hésitez pas à réserver un créneau directement depuis le portfolio.</div>
-      <div style="display:flex;gap:12px;flex-wrap:wrap">
-        <button class="ob-btn" onclick="obFinish()"><span class="ms">restaurant_menu</span>Voir le menu</button>
-        <button class="ob-btn ob-btn-ghost" onclick="obFinishCv()"><span class="ms">badge</span>Aller au CV</button>
+  </div>
+
+  <!-- SLIDE 4 -->
+  <div class="ob-slide" id="ob-4">
+    <div class="ob-slide-bg" style="background:linear-gradient(160deg,#061a10 0%,#030d08 100%)"></div>
+    <div class="ob-slide-overlay" style="background:linear-gradient(to top,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0.1) 60%)"></div>
+    <div class="ob-slide-content">
+      <div class="ob-dots"><div class="ob-dot"></div><div class="ob-dot"></div><div class="ob-dot"></div><div class="ob-dot active"></div></div>
+      <div class="ob-label">Bonne dégustation</div>
+      <div class="ob-big-title">C'est <span class="g">parti.</span></div>
+      <div class="ob-big-sub">Le menu vous attend. Vous pouvez réserver un créneau directement depuis le portfolio.</div>
+      <div style="display:flex;flex-direction:column;gap:12px;max-width:320px">
+        <button class="ob-cta" onclick="obFinish()">Voir le menu</button>
+        <button class="ob-cta ob-cta-ghost" onclick="obFinishCv()">Aller au CV</button>
       </div>
     </div>
   </div>
-  <div class="ob-progress">
-    <div class="ob-dot active" id="od-1"></div>
-    <div class="ob-dot" id="od-2"></div>
-    <div class="ob-dot" id="od-3"></div>
-    <div class="ob-dot" id="od-4"></div>
-  </div>
+
 </div>
 
 <div id="app">
@@ -482,69 +495,87 @@ a{text-decoration:none;color:inherit}
 
 <!-- ============ HOME ============ -->
 <section class="view active" id="view-home">
-  <div class="wrap">
-    <div class="hero-banner reveal">
-      <div class="hero-banner-bg"></div>
-      <div class="hero-banner-content">
-        <div class="hero-tag"><span class="pulse"></span>Candidat · Dev Full Stack · Growth Hacker / AI Builder</div>
-        <h1 class="hero-banner-title">Full Stack<br><span class="g">Growth & IA.</span></h1>
-        <p class="hero-banner-sub">Growth, IA et automatisation. Basé à Villeneuve-lès-Avignon, disponible rapidement.</p>
-        <div class="hero-banner-actions">
-          <button class="btn-green" onclick="go('work')"><span class="ms">restaurant_menu</span>Voir le menu</button>
-          <button class="btn-white" onclick="go('contact')">Passer commande</button>
-        </div>
+  <!-- HEADER UBER EATS STYLE -->
+  <div style="position:sticky;top:0;z-index:100;background:#fff;border-bottom:1px solid var(--line);padding:10px 16px;display:flex;align-items:center;justify-content:space-between">
+    <div>
+      <div style="display:flex;align-items:center;gap:3px;cursor:pointer">
+        <span style="font-size:12px;font-weight:600;color:var(--muted)">Livrer à</span>
+        <span class="ms" style="font-size:14px;color:var(--muted)">expand_more</span>
       </div>
+      <div style="font-size:16px;font-weight:800;letter-spacing:-0.01em">Villeneuve-lès-Avignon</div>
     </div>
-
-    <!-- STEPS STRIP -->
-    <div class="steps-strip reveal">
-      <div class="step-pill done"><span class="num">01</span>Pourquoi Unipros</div>
-      <span class="ms step-arrow">arrow_forward</span>
-      <div class="step-pill"><span class="num">02</span>Ma cuisine</div>
-      <span class="ms step-arrow">arrow_forward</span>
-      <div class="step-pill"><span class="num">03</span>Mes plats</div>
-    </div>
-
-    <!-- 01 · POURQUOI UNIPROS -->
-    <div class="section" style="padding:24px 0 8px">
-      <div class="section-head reveal">
-        <div><div class="section-num">01 · Pourquoi je corresponds à cette offre</div><h2 class="section-title">Ce que j'apporte chez Unipros</h2></div>
-      </div>
-      <p class="fit-intro reveal">Développeur Full Stack, Growth et IA, basé à Villeneuve-lès-Avignon. Voici ce que je peux apporter.</p>
-      <div class="fit-grid">
-        <div class="fit-card reveal"><div class="fit-ic"><span class="ms">science</span></div><div class="fit-t">Expérimentation & conversion</div><div class="fit-d">A/B tests, tunnels de conversion, acquisition data-driven. Je lance, mesure et itère vite — SEO programmatique, cold email automatisé, funnels calés sur les données.</div></div>
-        <div class="fit-card reveal"><div class="fit-ic"><span class="ms">account_tree</span></div><div class="fit-t">Automatisation sur-mesure</div><div class="fit-d">Python, Playwright, APIs — workflows custom sans dépendance. Relances, scraping, intégrations CRM, emails. Du code qui tourne tout seul.</div></div>
-        <div class="fit-card reveal"><div class="fit-ic"><span class="ms">smart_toy</span></div><div class="fit-t">IA & agents — Claude natif</div><div class="fit-d">Prompt engineering, agents IA, génération de contenu à grande échelle. J'utilise l'API Anthropic en prod depuis le début — dont Claude Code, cité dans votre fiche de poste.</div></div>
-        <div class="fit-card reveal"><div class="fit-ic"><span class="ms">build_circle</span></div><div class="fit-t">Interfaces IA clé en main</div><div class="fit-d">Design system, UX, déploiement — de la maquette à la prod en solo, aidé par l'IA. Ce portfolio en est un exemple concret.</div></div>
-      </div>
-    </div>
-
-    <!-- 02 · COMPÉTENCES -->
-    <div class="section" style="padding:28px 0 4px">
-      <div class="section-head reveal">
-        <div><div class="section-num">02 · Les techniques du chef</div><h2 class="section-title">Ma cuisine</h2></div>
-        <span class="section-link" onclick="go('stack')">Voir la carte <span class="ms">chevron_right</span></span>
-      </div>
-      <div id="skillGrid" class="skill-grid reveal"></div>
-    </div>
-
-    <!-- CHIFFRES CLÉS -->
-    <div class="statsrow">
-      <div class="statcard reveal"><div class="statcard-v" data-count="5">0</div><div class="statcard-l">Sites e-com en full SEO</div></div>
-      <div class="statcard reveal"><div class="statcard-v" data-count="6">0</div><div class="statcard-l">Plats au catalogue</div></div>
-      <div class="statcard reveal"><div class="statcard-v" data-count="100" data-suffix="%">0</div><div class="statcard-l">Cuisinés en solo</div></div>
-      <div class="statcard reveal"><div class="statcard-v" data-count="5" data-suffix="+">0</div><div class="statcard-l">Ans d'expérience</div></div>
-    </div>
-
-    <!-- 03 · PROJETS -->
-    <div class="section" style="padding-top:8px">
-      <div class="section-head reveal">
-        <div><div class="section-num">03 · Sorti tout chaud</div><h2 class="section-title">Mes plats</h2></div>
-        <span class="section-link" onclick="go('work')">Voir les plats <span class="ms">chevron_right</span></span>
-      </div>
-      <div class="rail" id="homeCards"></div>
+    <div style="display:flex;gap:8px">
+      <button style="width:40px;height:40px;border-radius:50%;background:none;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center" onclick="document.querySelector('.header-search') && document.querySelector('.header-search').focus()"><span class="ms" style="font-size:22px">search</span></button>
+      <button style="width:40px;height:40px;border-radius:50%;background:none;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center" onclick="openHam()"><span class="ms" style="font-size:22px">tune</span></button>
     </div>
   </div>
+
+  <!-- SEARCH BAR -->
+  <div style="padding:12px 16px 0">
+    <div style="display:flex;align-items:center;gap:10px;background:var(--surface);border-radius:99px;padding:12px 18px;cursor:pointer" onclick="go('work')">
+      <span class="ms" style="font-size:20px;color:var(--muted)">search</span>
+      <span style="font-size:14px;color:var(--muted);font-weight:500">Rechercher un projet, une compétence...</span>
+    </div>
+  </div>
+
+  <!-- CATEGORY CHIPS -->
+  <div style="display:flex;gap:8px;overflow-x:auto;padding:12px 16px 4px;scrollbar-width:none">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;min-width:72px" onclick="go('work')">
+      <div style="width:52px;height:52px;border-radius:50%;background:var(--ink);display:flex;align-items:center;justify-content:center"><span class="ms" style="font-size:24px;color:#fff">restaurant_menu</span></div>
+      <span style="font-size:12px;font-weight:700;color:var(--ink)">Tout</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;min-width:72px" onclick="go('work');filterWork('saas',document.querySelector('[data-filter=saas]'))">
+      <div style="width:52px;height:52px;border-radius:50%;background:var(--surface-2);display:flex;align-items:center;justify-content:center"><span class="ms" style="font-size:24px">dns</span></div>
+      <span style="font-size:12px;font-weight:600;color:var(--muted)">SaaS</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;min-width:72px" onclick="go('work')">
+      <div style="width:52px;height:52px;border-radius:50%;background:var(--surface-2);display:flex;align-items:center;justify-content:center"><span class="ms" style="font-size:24px">storefront</span></div>
+      <span style="font-size:12px;font-weight:600;color:var(--muted)">Marketplace</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;min-width:72px" onclick="go('work')">
+      <div style="width:52px;height:52px;border-radius:50%;background:var(--surface-2);display:flex;align-items:center;justify-content:center"><span class="ms" style="font-size:24px">smartphone</span></div>
+      <span style="font-size:12px;font-weight:600;color:var(--muted)">Mobile</span>
+    </div>
+    <div style="display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;min-width:72px" onclick="go('work')">
+      <div style="width:52px;height:52px;border-radius:50%;background:var(--surface-2);display:flex;align-items:center;justify-content:center"><span class="ms" style="font-size:24px">location_city</span></div>
+      <span style="font-size:12px;font-weight:600;color:var(--muted)">Civic Tech</span>
+    </div>
+  </div>
+
+  <!-- BANNIERE CANDIDAT -->
+  <div style="padding:16px 16px 0">
+    <div style="background:var(--green);border-radius:12px;padding:24px 20px;position:relative;overflow:hidden;cursor:pointer" onclick="go('cv')">
+      <div style="position:absolute;right:-20px;top:-20px;width:120px;height:120px;border-radius:50%;background:rgba(255,255,255,0.12)"></div>
+      <div style="position:absolute;right:20px;top:50%;transform:translateY(-50%);opacity:0.15">
+        <span class="ms" style="font-size:80px;color:#fff">badge</span>
+      </div>
+      <div style="position:relative;z-index:1">
+        <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.75);margin-bottom:8px">Candidature ouverte</div>
+        <div style="font-size:20px;font-weight:800;color:#fff;line-height:1.2;margin-bottom:8px">Dev Full Stack<br>Growth & IA</div>
+        <div style="font-size:13px;color:rgba(255,255,255,0.8);margin-bottom:16px">Disponible rapidement · Villeneuve-lès-Avignon</div>
+        <button style="background:#000;color:#fff;padding:10px 20px;border-radius:99px;border:none;font-size:13px;font-weight:800;cursor:pointer;font-family:inherit">Voir mon CV</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION SELECTION DU CHEF -->
+  <div style="padding:24px 0 0">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:0 16px;margin-bottom:12px">
+      <div style="font-size:18px;font-weight:800;letter-spacing:-0.02em">Sélection du Chef</div>
+      <span class="ms" style="cursor:pointer" onclick="go('work')">arrow_forward</span>
+    </div>
+    <div style="display:flex;gap:12px;overflow-x:auto;padding:0 16px 16px;scrollbar-width:none" id="homeCardsNew"></div>
+  </div>
+
+  <!-- SECTION NOUVEAUTES -->
+  <div style="padding:8px 0 24px">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:0 16px;margin-bottom:12px">
+      <div style="font-size:18px;font-weight:800;letter-spacing:-0.02em">Nouveautés</div>
+      <span class="ms" style="cursor:pointer" onclick="go('work')">arrow_forward</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:0;padding:0 16px" id="homeListNew"></div>
+  </div>
+
   <div class="wrap"><div class="footer"><div class="footer-grid">
     <div><div class="footer-brand" style="flex-direction:column;gap:0;align-items:flex-start"><span style="font-size:22px;font-weight:800;color:var(--green);letter-spacing:-0.04em;line-height:1;display:block">Uber</span><span style="font-size:22px;font-weight:800;color:var(--ink);letter-spacing:-0.04em;line-height:1;display:block">Dev</span></div><div class="footer-tag">Des produits livrés chauds, prêts à scaler.</div></div>
     <div style="display:flex;flex-direction:column;align-items:flex-end;gap:4px"><div style="font-size:9px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--green)">Page éphémère · Créée pour Unipros</div><div class="footer-meta">© 2026 · VILLENEUVE-LÈS-AVIGNON · FR</div></div>
@@ -1219,7 +1250,45 @@ function renderHome(){
     if(ia===-1)ia=99;if(ib===-1)ib=99;
     return ia-ib;
   });
-  document.getElementById('homeCards').innerHTML=sorted.map(cardHTML).join('');
+  // Sélection du Chef — cards horizontales (InRoom + CdV)
+  var chefCards=sorted.filter(function(p){return p.id!=='huntlist'&&p.id!=='stacker';});
+  var el=document.getElementById('homeCardsNew');
+  if(el)el.innerHTML=chefCards.map(function(p){
+    return '<div style="min-width:260px;flex-shrink:0;cursor:pointer" onclick="openDetail(\''+p.id+'\')">'+
+      '<div style="position:relative;width:260px;height:160px;border-radius:12px;overflow:hidden;margin-bottom:10px;background:'+p.grad+'">'+
+      '<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><div style="transform:scale(0.6);transform-origin:center">'+p.logo+'</div></div>'+
+      '<div style="position:absolute;top:10px;right:10px;width:28px;height:28px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center"><span class="ms" style="font-size:16px">favorite</span></div>'+
+      (p.promo?'<div style="position:absolute;bottom:10px;left:10px;background:var(--green);color:#fff;font-size:10px;font-weight:700;padding:4px 10px;border-radius:99px;text-transform:uppercase;letter-spacing:0.05em">'+p.promo+'</div>':'')+
+      '</div>'+
+      '<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:2px">'+
+      '<div style="font-size:14px;font-weight:700">'+p.title+'</div>'+
+      '<div style="background:var(--surface-2);padding:2px 8px;border-radius:99px;display:flex;align-items:center;gap:3px"><span style="font-size:12px;font-weight:700">'+p.rating+'</span><span class="ms" style="font-size:12px;color:var(--green)">star</span></div>'+
+      '</div>'+
+      '<div style="font-size:12px;color:var(--muted)">'+p.meta+'</div>'+
+    '</div>';
+  }).join('');
+
+  // Nouveautés — Huntlist + Stacker uniquement
+  var listCards=sorted.slice(2,4);
+  var el2=document.getElementById('homeListNew');
+  if(el2)el2.innerHTML=listCards.map(function(p){
+    return '<div style="display:flex;align-items:center;gap:14px;cursor:pointer;padding:12px 0;border-bottom:1px solid var(--line)" onclick="openDetail(\''+p.id+'\')">'+
+      '<div style="width:80px;height:80px;border-radius:10px;overflow:hidden;flex-shrink:0;background:'+p.grad+';display:flex;align-items:center;justify-content:center">'+
+        '<div style="transform:scale(0.5);transform-origin:center">'+p.logo+'</div>'+
+      '</div>'+
+      '<div style="flex:1">'+
+        '<div style="display:flex;align-items:flex-start;justify-content:space-between">'+
+          '<div style="font-size:14px;font-weight:700">'+p.title+'</div>'+
+          '<span class="ms" style="font-size:16px;color:var(--muted)">more_horiz</span>'+
+        '</div>'+
+        '<div style="display:flex;align-items:center;gap:6px;margin-top:4px">'+
+          '<span style="background:var(--surface-2);padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700">'+p.tags[0]+'</span>'+
+          '<span style="font-size:12px;color:var(--muted)">'+p.meta+'</span>'+
+        '</div>'+
+        '<div style="font-size:12px;color:var(--muted);margin-top:3px">'+p.rating+' · '+p.meta.split(' · ')[0]+'</div>'+
+      '</div>'+
+    '</div>';
+  }).join('');
 }
 function renderWork(filter){
   var base=filter&&filter!=='all'?PROJECTS.filter(function(p){return p.cat===filter;}):PROJECTS;
