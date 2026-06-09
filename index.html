@@ -202,13 +202,13 @@ a{text-decoration:none;color:inherit}
 
 /* ===== FIT (Unipros) ===== */
 .fit-intro{font-size:16px;color:var(--ink-2);line-height:1.6;max-width:720px;margin-bottom:24px}
-.fit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
-.fit-card{background:var(--surface);border-radius:var(--radius-xl);padding:40px 36px;transition:transform 0.2s}
-.fit-card:hover{transform:translateY(-3px)}
-.fit-ic{width:56px;height:56px;border-radius:14px;background:var(--green-bg);color:var(--green);display:flex;align-items:center;justify-content:center;margin-bottom:24px}
-.fit-ic .ms{font-size:24px}
-.fit-t{font-size:17px;font-weight:800;letter-spacing:-0.015em;margin-bottom:14px}
-.fit-d{font-size:14.5px;color:var(--muted);line-height:1.55}
+.fit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}.fit-card-full{grid-column:span 2}
+.fit-card{background:var(--surface);border-radius:var(--radius-xl);padding:20px 24px;transition:transform 0.2s;display:flex;align-items:flex-start;gap:16px}
+.fit-card:hover{transform:translateY(-2px)}
+.fit-ic{width:40px;height:40px;border-radius:10px;background:var(--green-bg);color:var(--green);display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.fit-ic .ms{font-size:20px}
+.fit-t{font-size:15px;font-weight:800;letter-spacing:-0.01em;margin-bottom:6px}
+.fit-d{font-size:13px;color:var(--muted);line-height:1.55}
 
 /* ===== SECTION NUM & STEPS ===== */
 .section-num{font-size:10.5px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--green);margin-bottom:12px}
@@ -247,7 +247,7 @@ a{text-decoration:none;color:inherit}
 .tech-chips{display:flex;gap:8px;flex-wrap:wrap}
 .chip{padding:12px 20px;border-radius:99px;background:var(--surface);color:var(--ink-2);font-size:13px;font-weight:600;border:1px solid var(--line);transition:all 0.18s;cursor:default}
 .chip:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
-.focus-row{padding:16px 0;border-bottom:1px solid var(--line)}
+.focus-row{padding:20px 0;border-bottom:1px solid var(--line)}
 .focus-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:9px}
 .focus-name{font-size:14px;font-weight:700}
 .focus-pct{font-size:13px;font-weight:700;color:var(--green)}
@@ -426,7 +426,7 @@ a{text-decoration:none;color:inherit}
     <div class="ob-slide-content">
       <div class="ob-dots"><div class="ob-dot active"></div><div class="ob-dot"></div><div class="ob-dot"></div><div class="ob-dot"></div></div>
       <div class="ob-big-title">Bienvenue chez<br><span class="g">Uber Dev.</span></div>
-      <div class="ob-big-sub">Le restaurant de Lucas Fernandez. Des produits Full Stack & IA livrés chauds.</div>
+      <div class="ob-big-sub">Le restaurant privatisé pour Unipros. Des produits Full Stack & IA livrés chauds.</div>
       <button class="ob-cta" onclick="obNext(2)">Démarrer</button>
     </div>
   </div>
@@ -446,7 +446,7 @@ a{text-decoration:none;color:inherit}
 
   <!-- SLIDE 3 -->
   <div class="ob-slide" id="ob-3">
-    <div class="ob-slide-bg" style="background:linear-gradient(160deg,#0d0d1a 0%,#05050d 100%)"></div>
+    <div class="ob-slide-bg" style="background:linear-gradient(160deg,#0d0d0d 0%,#050505 100%)"></div>
     <div class="ob-slide-overlay" style="background:linear-gradient(to top,rgba(0,0,0,0.85) 0%,rgba(0,0,0,0.1) 60%)"></div>
     <div class="ob-slide-content">
       <div class="ob-dots"><div class="ob-dot"></div><div class="ob-dot"></div><div class="ob-dot active"></div><div class="ob-dot"></div></div>
@@ -490,7 +490,7 @@ a{text-decoration:none;color:inherit}
     <button class="header-link" data-nav="stack" onclick="go('stack')">Stack</button>
     <button class="header-link" data-nav="cv" onclick="go('cv')">CV</button>
   </nav>
-  <button class="header-cart" onclick="openBooking()"><span class="ms ms-fill" style="font-size:18px">add_shopping_cart</span><span class="cart-label">Ajouter un entretien au panier</span></button>
+  <button class="header-cart" onclick="openBooking()"><span class="ms ms-fill" style="font-size:18px">add_shopping_cart</span><span class="cart-label">Ajouter un entretien</span></button>
   <button class="header-burger" onclick="openHam()"><span class="ms">menu</span></button></header>
 
 <!-- ============ HOME ============ -->
@@ -568,6 +568,35 @@ a{text-decoration:none;color:inherit}
     </div>
   </div>
 
+  <!-- CE QUE J'APPORTE -->
+  <div style="padding:24px 16px 8px">
+    <div style="font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--green);margin-bottom:6px">01 · Pourquoi je corresponds à cette offre</div>
+    <div style="font-size:24px;font-weight:800;letter-spacing:-0.025em;margin-bottom:20px">Ce que j'apporte chez Unipros</div>
+    <div style="display:flex;flex-direction:column">
+      <div style="display:flex;align-items:flex-start;gap:14px;padding:20px 0;border-bottom:1px solid var(--line)">
+        <div style="width:36px;height:36px;border-radius:8px;background:var(--green-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0"><span class="ms" style="font-size:18px;color:var(--green)">science</span></div>
+        <div><div style="font-size:14px;font-weight:800;margin-bottom:3px">Expérimentation & conversion</div><div style="font-size:13px;color:var(--muted);line-height:1.5">A/B tests, funnels, acquisition data-driven. Méthodologie ICE, cold email automatisé. Orienté résultat.</div></div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:14px;padding:20px 0;border-bottom:1px solid var(--line)">
+        <div style="width:36px;height:36px;border-radius:8px;background:var(--green-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0"><span class="ms" style="font-size:18px;color:var(--green)">account_tree</span></div>
+        <div><div style="font-size:14px;font-weight:800;margin-bottom:3px">Scraping & automatisation avancée</div><div style="font-size:13px;color:var(--muted);line-height:1.5">J'ai conçu Huntlist — scraping et prospection outbound automatisée de A à Z, séquences IA. Maîtrise technique et légale du sujet.</div></div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:14px;padding:20px 0;border-bottom:1px solid var(--line)">
+        <div style="width:36px;height:36px;border-radius:8px;background:var(--green-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0"><span class="ms" style="font-size:18px;color:var(--green)">neurology</span></div>
+        <div><div style="font-size:14px;font-weight:800;margin-bottom:3px">IA appliquée au Growth</div><div style="font-size:13px;color:var(--muted);line-height:1.5">API Anthropic en production, agents IA, génération de contenu à grande échelle. L'IA n'est pas un buzzword — c'est dans le code.</div></div>
+      </div>
+      <div style="display:flex;align-items:flex-start;gap:14px;padding:20px 0;border-bottom:1px solid var(--line)">
+        <div style="width:36px;height:36px;border-radius:8px;background:var(--green-bg);display:flex;align-items:center;justify-content:center;flex-shrink:0"><span class="ms" style="font-size:18px;color:var(--green)">hub</span></div>
+        <div><div style="font-size:14px;font-weight:800;margin-bottom:3px">Canaux non conventionnels</div><div style="font-size:13px;color:var(--muted);line-height:1.5">Hijacking d'audience, campagnes outbound ultra-ciblées. J'industrialise ce qui fonctionne et abandonne vite ce qui ne marche pas.</div></div>
+      </div>
+      <div style="display:flex;align-items:center;gap:14px;padding:20px;background:var(--ink);border-radius:12px;margin-top:12px">
+        <div style="width:36px;height:36px;border-radius:8px;background:rgba(255,255,255,0.1);display:flex;align-items:center;justify-content:center;flex-shrink:0"><span class="ms" style="font-size:18px;color:#fff">bolt</span></div>
+        <div><div style="font-size:14px;font-weight:800;color:#fff;margin-bottom:3px">Growth Hacker ou AI Builder — ou les deux.</div><div style="font-size:13px;color:rgba(255,255,255,0.65);line-height:1.5">Je peux couvrir l'un, l'autre, ou les deux en parallèle. Venant de l'entrepreneuriat, les grosses journées sont une habitude, pas un effort.</div></div>
+      </div>
+    </div>
+  </div>
+
+
   <!-- SECTION SELECTION DU CHEF -->
   <div style="padding:24px 0 0">
     <div style="display:flex;align-items:center;justify-content:space-between;padding:0 16px;margin-bottom:12px">
@@ -595,6 +624,7 @@ a{text-decoration:none;color:inherit}
 <!-- ============ WORK ============ -->
 <section class="view" id="view-work">
   <div class="wrap">
+    <div style="padding:16px 0 0;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line);margin-bottom:8px"><button onclick="go('home')" style="background:none;border:none;cursor:pointer;padding:4px;display:flex;align-items:center"><span class="ms" style="font-size:22px">arrow_back</span></button><span style="font-size:16px;font-weight:800">Mes plats</span></div>
     <div class="section" style="padding-bottom:8px">
       <div class="cats reveal" style="padding-top:24px">
         <div class="cat active" data-filter="all" onclick="filterWork('all',this)"><div class="cat-ic"><span class="ms">restaurant_menu</span></div><div class="cat-lbl">Tout</div></div>
@@ -618,7 +648,7 @@ a{text-decoration:none;color:inherit}
 <!-- ============ DETAIL ============ -->
 <section class="view" id="view-detail">
   <div class="detail-hero" id="detailHero">
-    <button class="detail-back" onclick="go('work')"><span class="ms">arrow_back</span></button>
+    <button class="detail-back" onclick="go('home')"><span class="ms">arrow_back</span></button>
     <div class="detail-hero-inner" id="detailHeroInner"></div>
   </div>
   <div class="wrap">
@@ -649,6 +679,7 @@ a{text-decoration:none;color:inherit}
 <!-- ============ STACK ============ -->
 <section class="view" id="view-stack">
   <div style="max-width:720px;margin:0 auto">
+    <div style="padding:16px 0 0;display:flex;align-items:center;gap:12px;border-bottom:1px solid var(--line);margin-bottom:8px"><button onclick="go('home')" style="background:none;border:none;cursor:pointer;padding:4px;display:flex;align-items:center"><span class="ms" style="font-size:22px">arrow_back</span></button><span style="font-size:16px;font-weight:800">Ma Cuisine Technique</span></div>
 
     <!-- HEADER -->
     <div style="padding:24px 16px 16px;display:flex;align-items:flex-start;justify-content:space-between">
@@ -1030,7 +1061,7 @@ a{text-decoration:none;color:inherit}
       <div class="section-head reveal"><h2 class="section-title">Le parcours</h2></div>
       <div class="tl">
         <div class="tl-item reveal"><div class="tl-top"><div class="tl-role">L'écosystème Stacker</div><div class="tl-period">2026 — PRÉSENT</div></div><div class="tl-org">Fondateur · Produit & Stratégie</div><ul class="tl-points"><li><span class="ms">bolt</span>Marketplace de vente connectant entreprises et commerciaux indépendants, avec une plateforme B2B complète (RDV, UGC, force de vente).</li><li><span class="ms">bolt</span>Mes propres SaaS servent de premières missions — résolution du problème de l'œuf et la poule.</li><li><span class="ms">bolt</span>Design system premium, onboardings, abonnements récurrents, calculateurs live.</li></ul><div class="tl-stack"><span class="card-tag">HTML/JS</span><span class="card-tag">Supabase</span><span class="card-tag">Vercel</span></div></div>
-        <div class="tl-item reveal"><div class="tl-top"><div class="tl-role">Cœur de Ville · InRoom</div><div class="tl-period">2025 — 2026</div></div><div class="tl-org">Builder · Produits verticaux</div><ul class="tl-points"><li><span class="ms">storefront</span>Application civic-tech multi-villes pour dynamiser le commerce local, pitchée au Grand Avignon.</li><li><span class="ms">hotel</span>Concierge digital premium pour l'hôtellerie avec interfaces staff, prestataires et clients.</li><li><span class="ms">picture_as_pdf</span>Pipeline de génération de PDF professionnels pour les pitchs municipaux.</li></ul><div class="tl-stack"><span class="card-tag">Playwright</span><span class="card-tag">Open-Meteo</span><span class="card-tag">localStorage</span></div></div>
+        <div class="tl-item reveal"><div class="tl-top"><div class="tl-role">Cœur de Ville · InRoom</div><div class="tl-period">2025 — 2026</div></div><div class="tl-org">Builder · Produits verticaux</div><ul class="tl-points"><li><span class="ms">storefront</span>Application civic-tech multi-villes pour dynamiser le commerce local, en déploiement au Grand Avignon.</li><li><span class="ms">hotel</span>Concierge digital premium pour l'hôtellerie avec interfaces staff, prestataires et clients.</li><li><span class="ms">picture_as_pdf</span>Pipeline de génération de PDF professionnels pour les pitchs municipaux.</li></ul><div class="tl-stack"><span class="card-tag">Playwright</span><span class="card-tag">Open-Meteo</span><span class="card-tag">localStorage</span></div></div>
         <div class="tl-item reveal"><div class="tl-top"><div class="tl-role">Huntlist · Alma.+</div><div class="tl-period">2025</div></div><div class="tl-org">AI Builder · SaaS B2B</div><ul class="tl-points"><li><span class="ms">smart_toy</span>SaaS de prospection piloté par IA : emails générés automatiquement, pilote automatique et gestion d'objections en direct pendant les appels.</li><li><span class="ms">travel_explore</span>Agrégation multi-sources (Google Maps, INSEE, BODACC), intégration Gmail OAuth et paiements récurrents, zéro config côté client.</li></ul><div class="tl-stack"><span class="card-tag">IA</span><span class="card-tag">Anthropic API</span><span class="card-tag">Gmail OAuth</span></div></div>
         <div class="tl-item reveal"><div class="tl-top"><div class="tl-role">Alma Company · Seoia Partners</div><div class="tl-period">FONDATIONS</div></div><div class="tl-org">Fondateur · Agences</div><ul class="tl-points"><li><span class="ms">web</span>Agence web (Alma) et agence SEO (Seoia) — le moteur cash-flow qui finance les ventures produit.</li><li><span class="ms">trending_up</span>SEO programmatique à grande échelle : 153+ pages comparatives générées pour positionner des boutiques sur la longue traîne.</li><li><span class="ms">shopping_cart</span>Gestion de sites e-commerce et exploration de marques (perfumerie DIY, streetwear).</li></ul><div class="tl-stack"><span class="card-tag">Web</span><span class="card-tag">SEO</span><span class="card-tag">E-commerce</span></div></div>
       </div>
@@ -1071,7 +1102,7 @@ a{text-decoration:none;color:inherit}
       <button onclick="openBooking()" style="width:100%;background:var(--green);color:#fff;padding:16px 20px;border-radius:12px;border:none;font-size:15px;font-weight:800;cursor:pointer;font-family:inherit;display:flex;align-items:center;justify-content:space-between">
         <div style="display:flex;align-items:center;gap:12px">
           <span class="ms ms-fill" style="font-size:22px">shopping_cart</span>
-          <span>Ajouter un entretien au panier</span>
+          <span>Ajouter un entretien</span>
         </div>
         <span class="ms" style="font-size:20px">arrow_forward</span>
       </button>
@@ -1195,30 +1226,9 @@ a{text-decoration:none;color:inherit}
     <button class="booking-close" onclick="closeLdm()"><span class="ms">close</span></button>
   </div>
   <div style="border-top:1px solid var(--line);padding-top:24px;font-size:15px;color:var(--ink-2);line-height:1.8">
-    <p style="margin-bottom:16px"><strong>Objet : Candidature Growth Hacker / AI Builder</strong></p>
-    <p style="margin-bottom:16px">Après plusieurs années à entreprendre en solo — agences, SaaS, marketplaces — je cherche aujourd'hui à m'investir dans un projet sur la durée, avec une vraie équipe.</p>
-    <p style="margin-bottom:16px">Unipros, c'est exactement ce que je cherche. Le poste colle parfaitement à ce que je fais au quotidien : growth, automatisation, IA. J'utilise l'API Anthropic en production, je travaille sur des funnels, des outils d'acquisition et des interfaces IA — de la conception jusqu'au déploiement.</p>
-    <p style="margin-bottom:16px">Mes projets tournent en gérance ou ont été cédés. L'entrepreneuriat solo est une belle école, mais j'ai réalisé que travailler seul n'est pas ce que je préfère. Je serais ravi d'intégrer une vraie équipe, de contribuer à un projet commun et de m'inscrire dans quelque chose qui dure.</p>
-    <p style="margin-bottom:24px">Disponible rapidement, motivé, et pas du genre à faire du remplissage.</p>
-    <p style="font-weight:700">Lucas Fernandez</p>
-  </div>
-</div>
-
-<!-- LDM MODAL -->
-<div class="booking-overlay" id="ldmOverlay" onclick="closeLdm()"></div>
-<div class="booking-sheet" id="ldmSheet">
-  <div class="sheet-handle"></div>
-  <div style="padding:0 0 8px;display:flex;align-items:center;justify-content:space-between">
-    <div>
-      <div style="font-size:11px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--green);margin-bottom:6px">Lettre de motivation · Unipros</div>
-      <div style="font-size:22px;font-weight:800;letter-spacing:-0.025em">Lucas Fernandez</div>
-    </div>
-    <button class="booking-close" onclick="closeLdm()"><span class="ms">close</span></button>
-  </div>
-  <div style="border-top:1px solid var(--line);padding-top:24px;font-size:15px;color:var(--ink-2);line-height:1.8">
     <p style="margin-bottom:16px"><strong>Objet : Candidature Dev Full Stack · Growth Hacker / AI Builder</strong></p>
     <p style="margin-bottom:16px">Après plusieurs années à entreprendre en solo — agences, SaaS, marketplaces — je cherche aujourd'hui à m'investir dans un projet sur la durée, avec une vraie équipe.</p>
-    <p style="margin-bottom:16px">Unipros, c'est exactement ce que je cherche. Le poste colle parfaitement à ce que je fais au quotidien : growth, automatisation, IA. J'utilise l'API Anthropic en production, je travaille sur des funnels, des outils d'acquisition et des interfaces IA — de la conception jusqu'au déploiement.</p>
+    <p style="margin-bottom:16px">Unipros, c'est exactement ce que je cherche. J'ai vu vos deux fiches de poste — Growth Hacker et AI Builder — et je peux couvrir l'une, l'autre, ou les deux. Au quotidien je fais du growth, de l'automatisation, de l'IA et du code. J'ai conçu Huntlist, un logiciel de scraping et prospection outbound automatisée de A à Z, avec agents IA et séquences personnalisées. Venant de l'entrepreneuriat, les journées longues sont une habitude, pas un effort.</p>
     <p style="margin-bottom:16px">Mes projets tournent en gérance ou ont été cédés. L'entrepreneuriat solo est une belle école, mais j'ai réalisé que travailler seul n'est pas ce que je préfère. Je serais ravi d'intégrer une vraie équipe, de contribuer à un projet commun et de m'inscrire dans quelque chose qui dure.</p>
     <p style="margin-bottom:24px">Disponible rapidement, motivé, et pas du genre à faire du remplissage.</p>
     <p style="font-weight:700">Lucas Fernandez</p>
@@ -1426,7 +1436,7 @@ var PROJECTS=[
    feats:[['event_available','RDV qualifiés','Carte de France interactive, achat à l\'unité ou en abonnement récurrent avec remises par paliers.'],['videocam','Campagnes UGC','Configurateur de vidéos style Meta Ads, créateurs vérifiés, preuve de publication.'],['campaign','Force de vente','Déployez une équipe de closers à la performance, vous fixez la commission, 0 coût fixe.']]},
   {id:'coeurdeville',cat:'civic',url:'https://coeur-de-ville.vercel.app/',url:'https://coeur-de-ville.vercel.app/',title:'Cœur de Ville',grad:'linear-gradient(135deg,#2c4a3e,#14241d)',logo:'<div style="text-align:center"><div style="font-size:28px;font-weight:800;color:#fff;letter-spacing:-0.02em;line-height:1.2">Cœur de Ville</div><div style="font-size:8px;font-weight:600;color:rgba(255,255,255,0.45);letter-spacing:2.5px;margin-top:8px">PATRIMOINE &amp; DÉCOUVERTE</div></div>',
    rating:'4.9',meta:'Civic Tech · Multi-villes',promo:'×16 ROI',tags:['Civic Tech','Gamification','Multi-villes'],
-   desc:"Une application qui anime le commerce local des municipalités. Fiches commerçants vérifiées, quiz et mini-jeux, programme de fidélité. Déployée pour plusieurs villes du Gard et du Vaucluse, pitchée à l'intercommunalité du Grand Avignon.",
+   desc:"Une application qui anime le commerce local des municipalités. Fiches commerçants vérifiées, quiz et mini-jeux, programme de fidélité. Déployée pour plusieurs villes du Gard et du Vaucluse, en déploiement au Grand Avignon.",
    stats:[['×16','ROI estimé'],['4','Villes déployées'],['5','Mini-jeux']],
    feats:[['storefront','Fiches commerçants','Profils de vrais commerces locaux avec données vérifiées, photos et infos pratiques.'],['sports_esports','Mini-jeux','Quiz, Photo Mystère, Mots Mêlés et plus, avec points de fidélité synchronisés.'],['location_city','Multi-villes','Architecture scalable : chaque ville a son espace, géré depuis une base commune.']]},
   {id:'huntlist',cat:'saas',url:'https://www.huntlist.fr/alma-plus-landing.html',url:'https://www.huntlist.fr/alma-plus-landing.html',title:'Huntlist',grad:'#ffffff',logoSmall:'<div style="width:54px;height:54px;background:#3b82f6;border-radius:13px;display:flex;align-items:center;justify-content:center"><span class="ms ms-fill" style="font-size:28px;color:#fff">keyboard_double_arrow_right</span></div>',logo:'<div style="display:flex;align-items:center;gap:14px"><div style="width:54px;height:54px;background:#3b82f6;border-radius:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0"><span class="ms ms-fill" style="font-size:30px;color:#fff">keyboard_double_arrow_right</span></div><span style="font-size:28px;font-weight:700;color:#111;letter-spacing:-0.02em">huntlist.</span></div>',
@@ -1485,7 +1495,7 @@ function renderHome(){
   }).join('');
 
   // Nouveautés — Huntlist + Stacker uniquement
-  var novelLogos={'huntlist':'<div style="width:44px;height:44px;background:#3b82f6;border-radius:10px;display:flex;align-items:center;justify-content:center"><span class="ms ms-fill" style="font-size:24px;color:#fff">keyboard_double_arrow_right</span></div>','stacker':'<span style="font-size:22px;font-weight:800;color:#fff;letter-spacing:-0.04em">St.</span>'};
+  var novelLogos={'huntlist':'<div style="width:80px;height:80px;background:#3b82f6;border-radius:14px;display:flex;align-items:center;justify-content:center"><span class="ms ms-fill" style="font-size:32px;color:#fff">keyboard_double_arrow_right</span></div>','stacker':'<span style="font-size:22px;font-weight:800;color:#fff;letter-spacing:-0.04em">St.</span>'};
   var listCards=sorted.slice(2,4);
   var el2=document.getElementById('homeListNew');
   if(el2)el2.innerHTML=listCards.map(function(p){
