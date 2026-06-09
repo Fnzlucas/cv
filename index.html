@@ -599,11 +599,13 @@ a{text-decoration:none;color:inherit}
 
   <!-- SECTION SELECTION DU CHEF -->
   <div style="padding:24px 0 0">
-    <div style="display:flex;align-items:center;justify-content:space-between;padding:0 16px;margin-bottom:12px">
-      <div style="font-size:18px;font-weight:800;letter-spacing:-0.02em">Sélection du Chef</div>
-      <span class="ms" style="cursor:pointer" onclick="go('work')">arrow_forward</span>
+    <div style="padding:0 16px">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
+        <div style="font-size:18px;font-weight:800;letter-spacing:-0.02em">Sélection du Chef</div>
+        <span class="ms" style="cursor:pointer" onclick="go('work')">arrow_forward</span>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px" id="homeCardsNew"></div>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;padding:0 16px 16px" id="homeCardsNew"></div>
   </div>
 
   <!-- SECTION NOUVEAUTES -->
