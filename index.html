@@ -599,13 +599,11 @@ a{text-decoration:none;color:inherit}
 
   <!-- SECTION SELECTION DU CHEF -->
   <div style="padding:24px 0 0">
-    <div style="padding:0 16px">
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px">
-        <div style="font-size:18px;font-weight:800;letter-spacing:-0.02em">Sélection du Chef</div>
-        <span class="ms" style="cursor:pointer" onclick="go('work')">arrow_forward</span>
-      </div>
-      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px" id="homeCardsNew"></div>
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:0 16px;margin-bottom:12px">
+      <div style="font-size:18px;font-weight:800;letter-spacing:-0.02em">Sélection du Chef</div>
+      <span class="ms" style="cursor:pointer" onclick="go('work')">arrow_forward</span>
     </div>
+    <div style="display:flex;gap:12px;overflow-x:auto;padding:0 16px 16px;scrollbar-width:none" id="homeCardsNew"></div>
   </div>
 
   <!-- SECTION NOUVEAUTES -->
@@ -969,6 +967,17 @@ a{text-decoration:none;color:inherit}
           <div style="position:relative;display:flex;justify-content:flex-end">
             <div style="position:absolute;left:50%;top:16px;transform:translateX(-50%);width:10px;height:10px;border-radius:50%;background:var(--green);border:2px solid #fff;z-index:2"></div>
             <div style="width:45%;background:var(--surface);padding:14px;border-radius:10px;border:1px solid var(--line)">
+              <div style="font-size:13px;font-weight:800;margin-bottom:4px">Forge SEO</div>
+              <p style="font-size:11px;color:var(--muted);line-height:1.5;margin-bottom:8px">Logiciel d'automatisation SEO développé en interne. Génération programmatique de pages, stratégie longue traîne. A contribué à générer 1M€ de CA via le SEO seul.</p>
+              <div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:6px"><span style="background:var(--surface-2);padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700">SEO</span><span style="background:var(--surface-2);padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700">Automatisation</span><span style="background:#f0f0f0;color:#555;padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700">Interne</span></div>
+              <div style="font-size:11px;font-weight:700;color:var(--green)">2021</div>
+            </div>
+          </div>
+
+          <!-- L -->
+          <div style="position:relative;display:flex;justify-content:flex-start">
+            <div style="position:absolute;left:50%;top:16px;transform:translateX(-50%);width:10px;height:10px;border-radius:50%;background:var(--green);border:2px solid #fff;z-index:2"></div>
+            <div style="width:45%;background:var(--surface);padding:14px;border-radius:10px;border:1px solid var(--line)">
               <div style="font-size:13px;font-weight:800;margin-bottom:4px">E-commerces</div>
               <p style="font-size:11px;color:var(--muted);line-height:1.5;margin-bottom:8px">Shopify, Dropshipping & Marques propres. Gestion catalogue 230+ SKUs. Code + Shopify API.</p>
               <div style="display:flex;gap:4px;flex-wrap:wrap;margin-bottom:6px"><span style="background:var(--surface-2);padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700">Shopify</span><span style="background:var(--surface-2);padding:2px 6px;border-radius:4px;font-size:10px;font-weight:700">E-com</span></div>
@@ -976,8 +985,8 @@ a{text-decoration:none;color:inherit}
             </div>
           </div>
 
-          <!-- L -->
-          <div style="position:relative;display:flex;justify-content:flex-start">
+          <!-- R -->
+          <div style="position:relative;display:flex;justify-content:flex-end">
             <div style="position:absolute;left:50%;top:16px;transform:translateX(-50%);width:10px;height:10px;border-radius:50%;background:var(--green);border:2px solid #fff;z-index:2"></div>
             <div style="width:45%;background:var(--surface);padding:14px;border-radius:10px;border:1px solid var(--line)">
               <div style="font-size:13px;font-weight:800;margin-bottom:4px">Carreleur</div>
@@ -987,8 +996,8 @@ a{text-decoration:none;color:inherit}
             </div>
           </div>
 
-          <!-- R -->
-          <div style="position:relative;display:flex;justify-content:flex-end">
+          <!-- L -->
+          <div style="position:relative;display:flex;justify-content:flex-start">
             <div style="position:absolute;left:50%;top:16px;transform:translateX(-50%);width:10px;height:10px;border-radius:50%;background:var(--green);border:2px solid #fff;z-index:2"></div>
             <div style="width:45%;background:var(--surface);padding:14px;border-radius:10px;border:1px solid var(--line)">
               <div style="font-size:13px;font-weight:800;margin-bottom:4px">Conducteur · Baladine</div>
@@ -1452,6 +1461,11 @@ var PROJECTS=[
    desc:"Un concierge digital premium pour l'hôtellerie. Marketplace de prestataires, disponibilités en temps réel, météo intégrée, réservations. Avec dashboards staff et prestataires. Pensé mobile-first pour une expérience client haut de gamme.",
    stats:[['3','Interfaces dédiées'],['Live','Disponibilités'],['24/7','Concierge']],
    feats:[['concierge','Concierge digital','Les clients réservent des prestations depuis leur chambre, avec dispo en temps réel.'],['dashboard','Multi-dashboards','Interfaces séparées pour les clients, le staff de l\'hôtel et les prestataires externes.'],['wb_sunny','Contexte intelligent','Météo intégrée, hero adapté à l\'heure de la journée, badges de disponibilité.']]},
+  {id:'forgeseo',cat:'saas',title:'Forge SEO',grad:'linear-gradient(135deg,#1a1a2e,#16213e)',logo:'<div style="text-align:center"><div style="font-size:28px;font-weight:800;color:#fff;letter-spacing:-0.02em;line-height:1.2">Forge<span style="color:#6366f1"> SEO</span></div><div style="font-size:9px;font-weight:600;color:rgba(255,255,255,0.4);letter-spacing:2px;margin-top:6px">AUTOMATISATION SEO</div></div>',
+   rating:'5.0',meta:'SaaS · SEO',promo:'Interne',tags:['SEO','Automatisation','No-code'],
+   desc:"Logiciel d'automatisation SEO développé en interne. Génération programmatique de pages, import Matrixify, gestion catalogue multi-SKUs, stratégie longue traîne à grande échelle. A permis d'atteindre 1M€ de CA via le SEO seul.",
+   stats:[['1M€','CA généré'],['153+','Pages générées'],['100%','Organique']],
+   feats:[['trending_up','SEO programmatique','Génération automatique de pages comparatives et longue traîne à grande échelle.'],['auto_awesome','Import automatisé','Pipeline Matrixify pour gérer des catalogues de 230+ SKUs sans intervention manuelle.'],['bar_chart','Résultats mesurables','1M€ de CA généré via trafic organique seul, zéro budget publicitaire.']]},
   {id:'alma',cat:'saas',title:'Alma · Seoia',grad:'linear-gradient(135deg,#1f1f1f,#444)',logo:'<span style="font-size:clamp(32px,5vw,52px);font-weight:800;color:#fff;letter-spacing:-0.03em">Alma<span style="color:#888">+</span></span>',
    rating:'5.0',meta:'Agences · Cash-flow',promo:'Le moteur',tags:['Agence','SEO','Web'],
    desc:"Les deux agences qui font tourner la machine. Alma Company (web) et Seoia Partners (SEO) génèrent le cash-flow qui finance les ventures produit. Plateforme Electron pour clients, apps métier sur-mesure, gestion e-commerce.",
@@ -1483,7 +1497,7 @@ function renderHome(){
   var chefCards=sorted.filter(function(p){return p.id!=='huntlist'&&p.id!=='stacker';});
   var el=document.getElementById('homeCardsNew');
   if(el)el.innerHTML=chefCards.map(function(p){
-    return '<div style="cursor:pointer" onclick="openDetail(\''+p.id+'\')">'+
+    return '<div style="min-width:260px;flex-shrink:0;cursor:pointer" onclick="openDetail(\''+p.id+'\')">'+
       '<div style="position:relative;width:260px;height:160px;border-radius:12px;overflow:hidden;margin-bottom:10px;background:'+p.grad+'">'+
       '<div style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center"><div style="transform:scale(0.6);transform-origin:center">'+p.logo+'</div></div>'+
       '<div style="position:absolute;top:10px;right:10px;width:28px;height:28px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center"><span class="ms" style="font-size:16px">favorite</span></div>'+
